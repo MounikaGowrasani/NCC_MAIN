@@ -166,7 +166,7 @@
                 dashboard.style.display = 'block';
                 menu.innerHTML = '<ul style="list-style-type:disc;">' +
                     '<li><a href="#camp" onclick="showContent(\'SCHEDULE\')">UPLOAD SCHEDULE</a></li>'+
-                    '<li><a href="#regment.html" onclick="showContent(\'REGMENT\')">ENROLLED STUDENTS</a></li>' +
+                    '<li><a href="#regment.html" onclick="showContent(\'SEGMENT\')">ENROLLED STUDENTS</a></li>' +
                     '<li><a href="#leave" onclick="showContent(\'EVENTS\')">ADD EVENTS</a></li>' +
                     '<li><a href="#training" onclick="showContent(\'CAMPS\')">ADD CAMPS</a></li>' +
                     '<li><a href="http://192.168.10.10/stuCurStatusSectionReg21.jsp" onclick="showContent(\'CADET DETAILS\')">CADET INFORMATION</a></li>' +
@@ -190,7 +190,7 @@
     {
         contentDiv.innerHTML= '<iframe src="upload.html" width="1000px" height="500px"></iframe>';
     }
-    else if(content === 'REGMENT')
+    else if(content === 'SEGMENT')
     {
         contentDiv.innerHTML= '<iframe src="regment.php" width="1000px" height="500px"></iframe>';
     }
