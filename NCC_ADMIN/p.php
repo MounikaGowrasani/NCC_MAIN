@@ -168,7 +168,7 @@
 <body>
 <?php
 // Start the session to access session variables
-require('C:\xampp\htdocs\NCC MAIN\NCC  LOGIN\dbcon.php');
+require('C:\xampp\htdocs\NCC_MAIN\NCC_LOGIN\dbcon.php');
 session_start();
 // Check if the 'uname' session variable exists
 if (isset($_SESSION['uname'])) 

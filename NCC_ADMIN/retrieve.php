@@ -31,64 +31,81 @@
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
-            display: inline-block; /* Add this line to make them inline-block elements */
-            margin-bottom: 10px; /* Add margin to create space between links and buttons */
+            display: inline-block;
+            margin-bottom: 10px;
         }
-        
-        /* Give space between links and buttons */
+
         button {
-            margin-top: 10px; /* Adjust this margin as needed */
+            margin-top: 10px;
         }
-        
+
         #update {
-            margin-top: 20px; /* Increase the margin-top if you want more space */
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <?php
-if (isset($_POST["update"])) {
-    // Database connection parameters
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ncc";
+    if (isset($_POST["update"])) {
+        // Database connection parameters
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "ncc";
 
-    // Create a database connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+        // Create a database connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $scheduleType = $_POST['schedule_type'];
-
-
-        // File upload was successful, now update the database
-        $sql = "";
-        $years=Date('Y');
-        if ($scheduleType === 'update1') {
-            echo "hi";
-            
-            // SQL query for updating Schedule 1
-            $sql = "UPDATE pdf_files SET file_content = '$targetFile' WHERE unit='10A' and years='$years'";
-        } elseif ($scheduleType === 'update2') {
-            // SQL query for updating Schedule 2
-            $sql = "UPDATE pdf_files SET file_content = '$targetFile' WHERE unit='25A' and years='$years'";
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
         }
 
-        
-    $conn->close();
-}
-?>
+        $scheduleType = $_POST['schedule_type'];
+
+        // Get the current year
+        $currentYear = date('Y');
+
+        // Check if a file was uploaded successfully
+        if (isset($_FILES['schedule_file'])) {
+            // File details
+            $fileName = $_FILES['schedule_file']['name'];
+            $fileTmpName = $_FILES['schedule_file']['tmp_name'];
+
+            // Read the file content
+            $fileContent = file_get_contents($fileTmpName);
+
+            // Escape and insert the filename and file content into the database
+            $escapedFileName = $conn->real_escape_string($fileName);
+            $escapedFileContent = $conn->real_escape_string($fileContent);
+
+            // Determine the unit based on $scheduleType (update1 or update2)
+            $unit = ($scheduleType === 'update1') ? '10A' : '25A';
+
+            // SQL query for updating the database
+            $sql = "UPDATE pdf_files SET file_name = '$escapedFileName', file_content = '$escapedFileContent' 
+                    WHERE unit = '$unit' AND years = '$currentYear'";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "File updated successfully.";
+            } else {
+                echo "Error updating file: " . $conn->error;
+            }
+        } else {
+            echo "Error: File upload failed or no file selected.";
+        }
+
+        // Close the database connection
+        $conn->close();
+    }
+    ?>
 
     <h2>Retrieve PDF</h2>
     <div class="container">
         <a href="retrieve1.php" target="_self">View ANO1(10A) Schedule</a>
         <br>
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="schedule_file_1" accept=".pdf">
+        <form action="" method="post" enctype="multipart/form-data">
+            <input type="file" name="schedule_file" accept=".pdf">
             <input type="hidden" name="schedule_type" value="update1">
             <button type="submit" name="update" id="update">Update Schedule</button>
         </form>
@@ -98,8 +115,8 @@ if (isset($_POST["update"])) {
     <div class="container">
         <a href="retrieve2.php">View ANO2(25A) Schedule</a>
         <br>
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="schedule_file_2" accept=".pdf">
+        <form action="" method="post" enctype="multipart/form-data">
+            <input type="file" name="schedule_file" accept=".pdf">
             <input type="hidden" name="schedule_type" value="update2">
             <button type="submit" name="update" id="update">Update Schedule</button>
         </form>
