@@ -38,9 +38,9 @@ if(isset($_POST['submit']))
         if ($y == 'admin') {
             header('location: /NCC_MAIN/NCC_ADMIN/p.php');
         } elseif ($y == 'ano1') {
-            header('location: /NCC_MAIN/NCC1/p.html');
+            header('location: /NCC_MAIN/NCC1/p.php');
         } elseif ($y == 'ano2') {
-            header('location: /NCC_MAIN/NCC2/p.html');
+            header('location: /NCC_MAIN/NCC2/p.php');
         } elseif ($y == 'cadet') {
             header('location: /NCC_MAIN/student/student.html');
         }

@@ -338,13 +338,13 @@ function toggleProfileDetails() {
     function logout() {
     // Send an AJAX request to the server to log out the user
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/NCC MAIN/NCC  LOGIN/logout.php", true);
+    xhr.open("GET", "/NCC_MAIN/NCC_LOGIN/logout.php", true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             // Display the "Logout successful" alert
             alert("Logout successful");
             // Redirect to the login page if needed
-            window.location.href ="/NCC MAIN/NCC  LOGIN/loginmain.php"; // Replace with your actual login page URL
+            window.location.href ="/NCC_MAIN/NCC_LOGIN/loginmain.php"; // Replace with your actual login page URL
            
         }
     };
