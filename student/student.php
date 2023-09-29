@@ -231,7 +231,7 @@ if (isset($_SESSION['uname'])) {
         <div id="profile-details">
             <p>Name: <?php echo $studentName; ?></p>
             <p>Regimental number <?php echo $username; ?></p>
-            <p>Phone no: <?php echo $mno; ?></p>
+            <p>Mobile no: <?php echo $mno; ?></p>
             <button id="update-password-button" onclick="showPasswordForm()">Update Password</button>
             <button id="logout-button" onclick="logout()">Logout</button>
         </div>
