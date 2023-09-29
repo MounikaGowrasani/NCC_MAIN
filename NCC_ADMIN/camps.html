@@ -40,6 +40,38 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+        select#campName {
+    width: 60%;
+    margin-top: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* Background color for the dropdown */
+}
+
+/* Style the dropdown arrow */
+select#campName::-ms-expand {
+    display: none; /* Remove the default arrow in IE/Edge */
+}
+
+select#campName::-webkit-select {
+    appearance: none; /* Remove the default arrow in Chrome/Safari/Opera */
+}
+
+/* Style the selected option */
+select#campName option {
+    padding: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Style when the dropdown is focused */
+select#campName:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
 
         input[type="button"],
         input[type="submit"] {
@@ -64,7 +96,20 @@
     <form action="camps.php" method="post">
         <label for="campName">Camp Name:</label>
         <br>
-        <input type="text" id="campName" name="campName" required><br><br>
+        <select id="campName" name="campName" required>
+    <option value="ATC">ATC</option>
+    <option value="CATC">CATC</option>
+    <option value="NIC">NIC</option>
+    <option value="EBSB">EBSB</option>
+    <option value="AAC">AAC</option>
+    <option value="RCTC">RCTC</option>
+    <option value="SNIC">SNIC</option>
+    <option value="TSC">TSC</option>
+    <option value="COS">COS</option>
+    <option value="ALC">ALC</option>
+    <option value="RDC">RDC</option>
+</select>
+<br><br>
 
         <label for="location">Location:</label>
         <br>
