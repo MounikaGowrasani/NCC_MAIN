@@ -363,6 +363,6 @@ function closePasswordForm() {
 }
 
     </script>
-    
+      <script src="/NCC_MAIN/student/preventBack.js"></script>
 </body>
 </html>

@@ -161,6 +161,7 @@
             display: none;
         }
     </style>
+    <script src="preventBack.js"></script>
 </head>
 <body>
 <?php
@@ -368,8 +369,9 @@ function closePasswordForm() {
     modal.style.display = "none";
 }
 
+
     </script>
-    
+    <script src="preventBack.js"></script>
 </body>
 
 </html>
