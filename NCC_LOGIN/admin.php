@@ -36,13 +36,13 @@ if(isset($_POST['submit']))
         $_SESSION['uname'] = $u;
 
         if ($y == 'admin') {
-            header('location: /NCC MAIN/NCC ADMIN/p.php');
+            header('location: /NCC_MAIN/NCC ADMIN/p.php');
         } elseif ($y == 'ano1') {
-            header('location: /NCC MAIN/NCC1/p.html');
+            header('location: /NCC_MAIN/NCC1/p.html');
         } elseif ($y == 'ano2') {
-            header('location: /NCC MAIN/NCC2/p.html');
+            header('location: /NCC_MAIN/NCC2/p.html');
         } elseif ($y == 'cadet') {
-            header('location: /NCC MAIN/student/student.html');
+            header('location: /NCC_MAIN/student/student.html');
         }
     } else {
         // Username and password do not match
