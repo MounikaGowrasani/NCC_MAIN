@@ -173,13 +173,27 @@ if (isset($_SESSION['uname']))
         <h2>ASSOCIATE NCC OFFICER-1</h2>
         <div id="profile-button" onclick="toggleProfileDetails()">👤</div>
         <div id="profile-details">
-            <p>Name: John Doe</p>
+            <p>Name: Siva Koteswara Rao</p>
             <p>Employee ID: 12345</p>
             <p>Phone no: 9876543210</p>
             <button id="update-password-button">Update Password</button>
             <button id="logout-button">Logout</button>
         </div>
     </div>
+    <div id="password-form" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close" onclick="closePasswordForm()">&times;</span>
+        <form method="post" action="">
+            <label for="new_password">New Password:</label>
+            <input type="password" name="new_password" required><br>
+            <br>
+            <label for="confirm_new_password">Confirm New Password:</label>
+            <input type="password" name="confirm_new_password" required><br>
+            <br>
+            <input type="submit" name="update_password" value="Save Password">
+        </form>
+    </div>
+</div>
 
     <div id="container">
         <div id="menu">
@@ -254,6 +268,38 @@ function toggleProfileDetails() {
                 profileDetails.style.display = 'block';
             }
         }
+        function logout() {
+    // Send an AJAX request to the server to log out the user
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/NCC_MAIN/NCC_LOGIN/logout.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // Display the "Logout successful" alert
+            alert("Logout successful");
+            // Redirect to the login page if needed
+            window.location.href ="/NCC_MAIN/NCC_LOGIN/loginmain.php"; // Replace with your actual login page URL
+           
+        }
+    };
+    xhr.send();
+
+  
+}
+document.getElementById("update-password-button").addEventListener("click", function() {
+    showPasswordForm();
+});
+
+// Function to display the password form dialog
+function showPasswordForm() {
+    var modal = document.getElementById("password-form");
+    modal.style.display = "block";
+}
+
+// Function to close the password form dialog
+function closePasswordForm() {
+    var modal = document.getElementById("password-form");
+    modal.style.display = "none";
+}
 
     </script>
     
