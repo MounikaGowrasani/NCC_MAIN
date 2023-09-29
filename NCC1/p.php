@@ -129,6 +129,44 @@
     </style>
 </head>
 <body>
+<?php
+// Start the session to access session variables
+require('C:\xampp\htdocs\NCC_MAIN\NCC_LOGIN\dbcon.php');
+session_start();
+// Check if the 'uname' session variable exists
+if (isset($_SESSION['uname'])) 
+    $username = $_SESSION['uname'];
+ else
+    echo "log out";
+
+
+    if (isset($_POST['update_password'])) {
+        // Handle password update here
+        $newPassword = $_POST['new_password'];
+        $confirmNewPassword = $_POST['confirm_new_password'];
+        if ($newPassword === $confirmNewPassword) {
+           
+    
+            // Check for a successful connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $connection->connect_error);
+            }
+    
+            // Update the password in the database
+            $updateQuery = "UPDATE logins SET passwords = '$newPassword' WHERE username = '$username'";
+            if ($conn->query($updateQuery) === TRUE) {
+                echo "Password updated successfully.";
+            } else {
+                echo "Error updating password: " . $connection->error;
+            }
+    
+            // Close the database connection
+            $conn->close();
+        } else {
+            echo "New password and confirmation do not match.";
+        }
+    }
+?>
     <div id="header">
 
         <h1 id="dashboard-text">Dashboard</h1>
