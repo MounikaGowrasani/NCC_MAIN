@@ -42,7 +42,7 @@ if(isset($_POST['submit']))
         } elseif ($y == 'ano2') {
             header('location: /NCC_MAIN/NCC2/p.php');
         } elseif ($y == 'cadet') {
-            header('location: /NCC_MAIN/student/student.html');
+            header('location: /NCC_MAIN/student/student.php');
         }
     } else {
         // Username and password do not match

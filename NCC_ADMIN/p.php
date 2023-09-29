@@ -91,7 +91,7 @@
     color: #f00;
 }
 
-        #logout-button {
+#update-password-button,#logout-button {
             background-color: #007bff;
             color: #fff;
             border: none;
@@ -220,9 +220,6 @@ if (isset($_SESSION['uname']))
             <button id="logout-button" onclick="logout()">Logout</button>
         </div>
     </div>
-
-
-
 
     <div id="password-form" class="modal" style="display:none;">
     <div class="modal-content">

@@ -88,7 +88,7 @@
 .close:hover {
     color: #f00;
 }
-        #logout-button {
+        #update-password-button,#logout-button {
             background-color: #007bff;
             color: #fff;
             border: none;

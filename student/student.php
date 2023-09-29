@@ -73,6 +73,39 @@
         #container {
             display: flex;
         }
+        .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Style the modal content */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    width: 500px;
+    margin: 15% auto;
+    border: 1px solid #333;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Style the close button */
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #f00;
+}
 
         #menu {
             background-color: #eee;
@@ -130,6 +163,44 @@
     </style>
 </head>
 <body>
+<?php
+// Start the session to access session variables
+require('C:\xampp\htdocs\NCC_MAIN\NCC_LOGIN\dbcon.php');
+session_start();
+// Check if the 'uname' session variable exists
+if (isset($_SESSION['uname'])) 
+    $username = $_SESSION['uname'];
+ else
+    echo "log out";
+
+
+    if (isset($_POST['update_password'])) {
+        // Handle password update here
+        $newPassword = $_POST['new_password'];
+        $confirmNewPassword = $_POST['confirm_new_password'];
+        if ($newPassword === $confirmNewPassword) {
+           
+    
+            // Check for a successful connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $connection->connect_error);
+            }
+    
+            // Update the password in the database
+            $updateQuery = "UPDATE logins SET passwords = '$newPassword' WHERE username = '$username'";
+            if ($conn->query($updateQuery) === TRUE) {
+                echo "Password updated successfully.";
+            } else {
+                echo "Error updating password: " . $connection->error;
+            }
+    
+            // Close the database connection
+            $conn->close();
+        } else {
+            echo "New password and confirmation do not match.";
+        }
+    }
+?>
     <div id="header">
 
         <h1 id="dashboard-text">Dashboard</h1>
@@ -143,7 +214,20 @@
             <button id="logout-button">Logout</button>
         </div>
     </div>
-
+    <div id="password-form" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close" onclick="closePasswordForm()">&times;</span>
+        <form method="post" action="">
+            <label for="new_password">New Password:</label>
+            <input type="password" name="new_password" required><br>
+            <br>
+            <label for="confirm_new_password">Confirm New Password:</label>
+            <input type="password" name="confirm_new_password" required><br>
+            <br>
+            <input type="submit" name="update_password" value="Save Password">
+        </form>
+    </div>
+</div>
     <div id="container">
         <div id="menu">
             <!-- This is where the list will be dynamically generated -->
@@ -206,6 +290,64 @@ function toggleProfileDetails() {
 
     </script>
     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $('.editable').on('blur', function () {
+            var newValue = $(this).text();
+            var columnName = $(this).data('column');
+    
+            // Send an AJAX request to update the value in the database
+            $.ajax({
+                url: 'update_database.php',
+                method: 'POST',
+                data: {
+                    column: columnName,
+                    newValue: newValue,
+                    // Add any other data you need to identify the record
+                },
+                success: function (response) {
+                    // Handle the response from the server if needed
+                }
+            });
+        });
+    });
+
+    function logout() {
+    // Send an AJAX request to the server to log out the user
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/NCC_MAIN/NCC_LOGIN/logout.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // Display the "Logout successful" alert
+            alert("Logout successful");
+            // Redirect to the login page if needed
+            window.location.href ="/NCC_MAIN/NCC_LOGIN/loginmain.php"; // Replace with your actual login page URL
+           
+        }
+    };
+    xhr.send();
+
+  
+}
+document.getElementById("update-password-button").addEventListener("click", function() {
+    showPasswordForm();
+});
+
+// Function to display the password form dialog
+function showPasswordForm() {
+    var modal = document.getElementById("password-form");
+    modal.style.display = "block";
+}
+
+// Function to close the password form dialog
+function closePasswordForm() {
+    var modal = document.getElementById("password-form");
+    modal.style.display = "none";
+}
+
+    </script>
     
 </body>
+
 </html>
