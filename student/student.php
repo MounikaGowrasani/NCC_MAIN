@@ -207,7 +207,7 @@ if (isset($_SESSION['uname']))
         <h2>CADET</h2>
         <div id="profile-button" onclick="toggleProfileDetails()">👤</div>
         <div id="profile-details">
-            <p>Name: John Doe</p>
+            <p>Name: <?php echo $username; ?></p>
             <p>Employee ID: 12345</p>
             <p>Phone no: 9876543210</p>
             <button id="update-password-button" onclick="showPasswordForm()">Update Password</button>
