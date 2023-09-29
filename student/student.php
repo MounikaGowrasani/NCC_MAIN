@@ -168,8 +168,30 @@
 require('C:\xampp\htdocs\NCC_MAIN\NCC_LOGIN\dbcon.php');
 session_start();
 // Check if the 'uname' session variable exists
-if (isset($_SESSION['uname'])) 
+if (isset($_SESSION['uname'])) {
     $username = $_SESSION['uname'];
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $query = "SELECT stu_name,pno FROM enroll WHERE regimental_number = '$username'";
+    $result = $conn->query($query);
+
+    if ($result->num_rows > 0) {
+        // Output data of the student
+        while ($row = $result->fetch_assoc()) {
+            $studentName = $row['stu_name'];
+            $mno=$row['pno'];
+        }
+    } else {
+        echo "Student not found.";
+    }
+
+    // Close the result set
+    $result->close();
+    
+    // Close the database connection
+    $conn->close();
+}
  else
     echo "log out";
 
@@ -207,9 +229,15 @@ if (isset($_SESSION['uname']))
         <h2>CADET</h2>
         <div id="profile-button" onclick="toggleProfileDetails()">👤</div>
         <div id="profile-details">
+<<<<<<< HEAD
             <p>Name: <?php echo $username; ?></p>
             <p>Employee ID: 12345</p>
             <p>Phone no: 9876543210</p>
+=======
+            <p>Name: <?php echo $studentName; ?></p>
+            <p>Regimental number <?php echo $username; ?></p>
+            <p>Phone no: <?php echo $mno; ?></p>
+>>>>>>> cb0679c10015a884a0b5949982a082c7ecf23e2d
             <button id="update-password-button" onclick="showPasswordForm()">Update Password</button>
             <button id="logout-button" onclick="logout()">Logout</button>
         </div>
