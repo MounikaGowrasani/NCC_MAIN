@@ -177,8 +177,8 @@ if (isset($_SESSION['uname']))
             <p>Name: John Doe</p>
             <p>Employee ID: 12345</p>
             <p>Phone no: 9876543210</p>
-            <button id="update-password-button">Update Password</button>
-            <button id="logout-button">Logout</button>
+            <button id="update-password-button" onclick="showPasswordForm()">Update Password</button>
+            <button id="logout-button" onclick="logout()">Logout</button>
         </div>
     </div>
     <div id="password-form" class="modal" style="display:none;">
@@ -283,6 +283,31 @@ function toggleProfileDetails() {
             });
         });
     });
+    
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $('.editable').on('blur', function () {
+            var newValue = $(this).text();
+            var columnName = $(this).data('column');
+    
+            // Send an AJAX request to update the value in the database
+            $.ajax({
+                url: 'update_database.php',
+                method: 'POST',
+                data: {
+                    column: columnName,
+                    newValue: newValue,
+                    // Add any other data you need to identify the record
+                },
+                success: function (response) {
+                    // Handle the response from the server if needed
+                }
+            });
+        });
+    });
+
     function logout() {
     // Send an AJAX request to the server to log out the user
     var xhr = new XMLHttpRequest();
