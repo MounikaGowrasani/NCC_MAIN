@@ -210,8 +210,8 @@ if (isset($_SESSION['uname']))
             <p>Name: John Doe</p>
             <p>Employee ID: 12345</p>
             <p>Phone no: 9876543210</p>
-            <button id="update-password-button">Update Password</button>
-            <button id="logout-button">Logout</button>
+            <button id="update-password-button" onclick="showPasswordForm()">Update Password</button>
+            <button id="logout-button" onclick="logout()">Logout</button>
         </div>
     </div>
     <div id="password-form" class="modal" style="display:none;">
