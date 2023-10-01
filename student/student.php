@@ -291,7 +291,7 @@ if (isset($_SESSION['uname'])) {
     }
     else if(content === 'SCHEDULE')
     {
-        contentDiv.innerHTML= '<iframe src="upload.html" width="1000px" height="500px"></iframe>';
+        contentDiv.innerHTML= '<iframe src="viewschedule.php" width="1000px" height="500px"></iframe>';
     }
     else if(content === 'FEEDBACK')
     {
