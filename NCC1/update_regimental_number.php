@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
     $stmt->bind_param("ss", $newRegimentalNumber, $studentId);
 
     if ($stmt->execute()) {
-        echo '<script>alert("Regimental number updated successfully");window.location.href ="regment.php";</script>';
+        echo '<script>alert("Regimental number updated successfully");window.location.href ="regement.php";</script>';
         $insertSql = "INSERT INTO logins (username, passwords,type) VALUES (?, ?,?)";
     
     // You can generate a random password for the user or set a default one.
