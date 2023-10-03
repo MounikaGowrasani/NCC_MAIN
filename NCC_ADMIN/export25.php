@@ -1,10 +1,21 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "ncc";
+
+// Create a database connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 	header("Content-Type: application/xls");    
 	header("Content-Disposition: attachment; filename=student_list.xls");  
 	header("Pragma: no-cache"); 
 	header("Expires: 0");
  
-	require_once 'dbcon.php';
  
 	$output = "";
  
@@ -23,7 +34,7 @@
 			<tbody>
 	";
  
-	$query = $conn->query("SELECT * FROM `enroll`") or die(mysqli_errno());
+	$query = $conn->query("SELECT * FROM `enroll`  where ncc_unit_enrolled='138-B,25(A)BN NCC,Guntur' OR ncc_unit_enrolled='25A'") or die(mysqli_errno());
 	while($fetch = $query->fetch_array()){
  
 	$output .= "
@@ -34,7 +45,7 @@
                     <td>".$fetch['file_name']."</td>
                     <td>".$fetch['Date__of__birth']."</td>
                     <td>".$fetch['photo_name']."</td>
-                    <td>"."'".$fetch['Aadhar_number']."</td>
+                    <td>".$fetch['Aadhar_number']."</td>
 				
 				</tr>
 	";
