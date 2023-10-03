@@ -74,9 +74,9 @@ if ($result->num_rows > 0) {
         if (!empty($row["file_data"])) {
             $pdfData = $row["file_data"];
             $pdfDataEncoded = base64_encode($pdfData);
-            
+            $rno=$row['Registration_number'];
             // Create a unique filename for the downloaded PDF (optional)
-            $filename = "student_" . $id . ".pdf";
+            $filename = " " . $rno . ".pdf";
 
             // Display the link to download the PDF
             echo "<a href='data:application/pdf;base64,$pdfDataEncoded' download='$filename'>Download PDF Here</a>";
