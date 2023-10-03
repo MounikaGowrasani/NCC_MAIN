@@ -254,6 +254,8 @@ if (isset($_SESSION['uname']))
                     '<li><a href="#regment.html" onclick="showContent(\'SEGMENT\')">ENROLLED STUDENTS</a></li>' +
                     '<li><a href="#leave" onclick="showContent(\'EVENTS\')">ADD EVENTS</a></li>' +
                     '<li><a href="#training" onclick="showContent(\'CAMPS\')">ADD CAMPS</a></li>' +
+                    '<li><a href="#training" onclick="showContent(\'VCAMPS\')">VIEW CAMPS</a></li>' +
+                    '<li><a href="#training" onclick="showContent(\'RCAMPS\')">Registered students</a></li>' +
                     '<li><a href="http://192.168.10.10/stuCurStatusSectionReg21.jsp" onclick="showContent(\'CADET DETAILS\')">CADET INFORMATION</a></li>' +
                     '<li><a href="#queries" onclick="showContent(\'FEEDBACK\')">VIEW FEEDBACK</a></li>' +
                     '<li><a href="#profile" onclick="showContent(\'QUERIES\')">VIEW QUERIES</a></li>' +
@@ -278,6 +280,14 @@ if (isset($_SESSION['uname']))
     else if(content === 'SEGMENT')
     {
         contentDiv.innerHTML= '<iframe src="regment.php" width="1000px" height="500px"></iframe>';
+    }
+    else if(content === 'VCAMPS')
+    {
+        contentDiv.innerHTML= '<iframe src="view_camps.php" width="1000px" height="500px"></iframe>';
+    }
+    else if(content === 'RCAMPS')
+    {
+        contentDiv.innerHTML= '<iframe src="reg_stu.php" width="1000px" height="500px"></iframe>';
     }
     else {
         contentDiv.innerHTML = '<h2>' + content + '</h2>' +
