@@ -109,10 +109,8 @@
                 $row = $result->fetch_assoc();
                 echo "<h2>Camp Details</h2>";
                 $today = date('Y-m-d');
-                if ($row['fdate'] > $today) {
-                    echo ' <label>Registration number:</label>';
-                    echo '<input class="registration-input" type="text" placeholder="Enter Registration Number" required>';
-                }
+       SESSION_start();
+                $_SESSION['campIdd']=$row['campid'];
                 echo "<p><span class='details'>Camp Name:</span> <span class='detail'>" . $row['name'] . "</span></p>";
                 echo "<p><span class='details'>Location:</span> <span class='detail'>" . $row['location'] . "</span></p>";
                 echo "<p><span class='details'>From Date:</span> <span class='detail'>" . $row['fdate'] . "</span></p>";
@@ -127,7 +125,9 @@
                 // Show registration input for upcoming camps
               
                 if ($row['fdate'] > $today) {
-                    echo '<button class="apply-button">Apply</button>';
+                    echo '<form method="POST" action="register.php">';
+                    echo '<button type="submit" class="apply-button">Apply</button>';
+                    echo '</form>';
                 }
             } else {
                 echo "Camp details not found.";

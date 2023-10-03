@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM enroll where ncc_unit_enrolled='138-B,25(A)BN NCC,Guntur' OR ncc_unit_enrolled='10A'";
+$sql = "SELECT * FROM enroll where ncc_unit_enrolled='138-B,25(A)BN NCC,Guntur' OR ncc_unit_enrolled='25A'";
 
 $result = $conn->query($sql);
 
@@ -55,7 +55,7 @@ if ($result->num_rows > 0) {
     <th>identification_mark2</th>
     <th>blood_group</th> 
     <th>place</th>
-    <th>Datee</th>
+    <th>Date</th>
     <th>regimental_number</th>
     </tr>";
     $id=1;
