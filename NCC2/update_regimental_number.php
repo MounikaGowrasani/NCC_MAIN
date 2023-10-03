@@ -75,7 +75,6 @@ if (isset($_POST['submit'])) {
         
     } else {
         echo "Error updating Regimental Number: " . $stmt->error;
->>>>>>> 0d1e6536ee10aeea93c0b1db381ec060261ad091
 
 // You can generate a random password for the user or set a default one.
 // Here, I'm using 'password123' as a default password for the example.
