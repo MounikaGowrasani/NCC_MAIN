@@ -105,7 +105,9 @@ if ($result->num_rows > 0) {
 } else {
     echo "No results found";
 }
-
+echo "<br><br>";
+echo "<button onclick='exportToExcel25()'>Export to Excel</button>";
+echo "<br><br>";
 echo "<h2>65-G,10(A)GBN NCC,Guntur</h2>";
 $sql = "SELECT * FROM enroll where ncc_unit_enrolled='65-G,10(A)GBN NCC,Guntur' OR ncc_unit_enrolled='10A'";
 
@@ -194,7 +196,9 @@ if ($result->num_rows > 0) {
     echo "No results found";
 }
 
-
+echo "<br><br>";
+echo "<button id='exportButton' onclick='exportToExcel()'>Export to Excel</button>";
+echo "<br><br>";
 // Close the database connection
 $conn->close();
 ?>
@@ -223,4 +227,12 @@ $conn->close();
        
         alert("New Regimental Number: " + newRegimentalNumber);
     }
+    function exportToExcel() {
+        
+        window.location.href = 'export.php';
+        }
+        function exportToExcel25() {
+        
+        window.location.href = 'export25.php';
+        }
 </script>
