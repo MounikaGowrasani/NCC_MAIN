@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {
     <th>Name_of_school</th> 
     <th>Stream</th>
     <th>PAN_card_no</th>
-    <th>file_data</th>
+    <th>Marks memos</th>
     <th>Aadhar_number</th>
     <th>Date__of__birth</th>
     <th>father_name</th>
@@ -79,7 +79,7 @@ if ($result->num_rows > 0) {
             $filename = " " . $rno . ".pdf";
 
             // Display the link to download the PDF
-            echo "<a href='data:application/pdf;base64,$pdfDataEncoded' download='$filename'>Download PDF Here</a>";
+            echo "<a href='data:application/pdf;base64,$pdfDataEncoded' download='$filename'>$filename</a>";
         } else {
             // Display "File not available" when file_data is empty
             echo "File not available";
@@ -122,7 +122,7 @@ if ($result->num_rows > 0) {
     <th>Name_of_school</th> 
     <th>Stream</th>
     <th>PAN_card_no</th>
-    <th>file_data</th>
+    <th>Marks memos</th>
     <th>Aadhar_number</th>
     <th>Date__of__birth</th>
     <th>father_name</th>
@@ -162,12 +162,12 @@ if ($result->num_rows > 0) {
         if (!empty($row["file_data"])) {
             $pdfData = $row["file_data"];
             $pdfDataEncoded = base64_encode($pdfData);
-            
+            $rno=$row['Registration_number'];
             // Create a unique filename for the downloaded PDF (optional)
-            $filename = "student_" . $id . ".pdf";
+            $filename = " " . $rno . ".pdf";
 
             // Display the link to download the PDF
-            echo "<a href='data:application/pdf;base64,$pdfDataEncoded' download='$filename'>Download PDF Here</a>";
+            echo "<a href='data:application/pdf;base64,$pdfDataEncoded' download='$filename'>$filename</a>";
         } else {
             // Display "File not available" when file_data is empty
             echo "File not available";
