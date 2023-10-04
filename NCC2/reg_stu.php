@@ -142,7 +142,7 @@ function loadRegisteredStudents() {
 
     // Send an AJAX request to retrieve students for the selected camp
     $.ajax({
-        url: 'get_stu.php',
+        url: 'getstu.php',
         method: 'GET',
         data: { camp: selectedCamp },
         success: function (response) {
