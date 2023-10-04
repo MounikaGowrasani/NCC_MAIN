@@ -95,6 +95,7 @@
         <form method="post" action="">
             <label for="campType">Select Camp Type:</label>
             <select id="campType" name="campType">
+                <option value="select" selected>Select</option>
                 <option value="upcoming">Upcoming Camps</option>
                 <option value="active">Active Camps</option>
                 <option value="completed">Completed Camps</option>
