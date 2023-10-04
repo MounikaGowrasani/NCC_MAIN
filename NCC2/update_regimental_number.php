@@ -48,9 +48,9 @@ if (isset($_POST['submit'])) {
     $stmt->bind_param("sss", $newRegimentalNumber, $defaultPassword,$cadet);
 
     if ($stmt->execute()) {
-<<<<<<< HEAD
+
         $insertSql = "INSERT INTO logins (username, passwords,type) VALUES (?, ?,?)";
-=======
+
         echo '<script>alert("Regimental number updated successfully");window.location.href ="regment.php";</script>';
         $insertSql = "INSERT INTO logins (username, passwords,type) VALUES (?, ?,?)";
     
