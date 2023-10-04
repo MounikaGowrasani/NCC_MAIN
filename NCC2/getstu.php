@@ -69,7 +69,7 @@ if (isset($_GET['camp'])) {
 } else {
     echo "Invalid camp selection";
 }
-
+echo '<button type="submit">Submit</button>'; 
 $conn->close();
 ?>
 <html>
