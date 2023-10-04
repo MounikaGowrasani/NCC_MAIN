@@ -83,8 +83,10 @@
     </style>
 </head>
 <body>
-    <div class="container">
+<div class="container">
         <?php
+        session_start(); // Start a PHP session
+
         if (isset($_GET['campName'])) {
             // Replace these with your actual database credentials
             $servername = "localhost";
@@ -109,25 +111,31 @@
                 $row = $result->fetch_assoc();
                 echo "<h2>Camp Details</h2>";
                 $today = date('Y-m-d');
-       SESSION_start();
-                $_SESSION['campIdd']=$row['campid'];
-                echo "<p><span class='details'>Camp Name:</span> <span class='detail'>" . $row['name'] . "</span></p>";
-                echo "<p><span class='details'>Location:</span> <span class='detail'>" . $row['location'] . "</span></p>";
-                echo "<p><span class='details'>From Date:</span> <span class='detail'>" . $row['fdate'] . "</span></p>";
-                echo "<p><span class='details'>To Date:</span> <span class='detail'>" . $row['tdate'] . "</span></p>";
-                echo "<p><span class='details'>Daily Allowance (per student):</span> <span class='detail'>" . $row['dallow'] . "</span></p>";
-                echo "<p><span class='details'>Travel Allowance (per student):</span> <span class='detail'>" . $row['tallow'] . "</span></p>";
-                echo "<p><span class='details'>Petrol Oil Lubricant Allowance (POL) (per student):</span> <span class='detail'>" . $row['pol'] . "</span></p>";
-                echo "<p><span class='details'>Total Expenditure:</span> <span class='detail'>" . $row['exp'] . "</span></p>";
-                echo "<p><span class='details'>Number of Students:</span> <span class='detail'>" . $row['no_stu'] . "</span></p>";
-                // You can add more details as needed
+                
+                // Check if the student has already applied for this camp
+                if (isset($_SESSION['appliedCamp']) && $_SESSION['appliedCamp'] === $row['campid']) {
+                    echo "<p>You have already applied for this camp.</p>";
+                } else {
+                    // Store the camp ID in the session to mark that the student has applied
+                    $_SESSION['appliedCamp'] = $row['campid'];
+                    
+                    echo "<p><span class='details'>Camp Name:</span> <span class='detail'>" . $row['name'] . "</span></p>";
+                    echo "<p><span class='details'>Location:</span> <span class='detail'>" . $row['location'] . "</span></p>";
+                    echo "<p><span class='details'>From Date:</span> <span class='detail'>" . $row['fdate'] . "</span></p>";
+                    echo "<p><span class='details'>To Date:</span> <span class='detail'>" . $row['tdate'] . "</span></p>";
+                    echo "<p><span class='details'>Daily Allowance (per student):</span> <span class='detail'>" . $row['dallow'] . "</span></p>";
+                    echo "<p><span class='details'>Travel Allowance (per student):</span> <span class='detail'>" . $row['tallow'] . "</span></p>";
+                    echo "<p><span class='details'>Petrol Oil Lubricant Allowance (POL) (per student):</span> <span class='detail'>" . $row['pol'] . "</span></p>";
+                    echo "<p><span class='details'>Total Expenditure:</span> <span class='detail'>" . $row['exp'] . "</span></p>";
+                    echo "<p><span class='details'>Number of Students:</span> <span class='detail'>" . $row['no_stu'] . "</span></p>";
+                    // You can add more details as needed
 
-                // Show registration input for upcoming camps
-              
-                if ($row['fdate'] > $today) {
-                    echo '<form method="POST" action="register.php">';
-                    echo '<button type="submit" class="apply-button">Apply</button>';
-                    echo '</form>';
+                    // Show registration input for upcoming camps
+                    if ($row['fdate'] > $today) {
+                        echo '<form method="POST" action="register.php">';
+                        echo '<button type="submit" class="apply-button">Apply</button>';
+                        echo '</form>';
+                    }
                 }
             } else {
                 echo "Camp details not found.";
@@ -142,3 +150,4 @@
     </div>
 </body>
 </html>
+   
