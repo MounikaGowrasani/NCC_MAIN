@@ -292,7 +292,7 @@ if (isset($_SESSION['uname']))
     }
     else if(content === 'RegCAMPS')
     {
-        contentDiv.innerHTML= '<iframe src="reg_stu1.php" width="1000px" height="500px"></iframe>';
+        contentDiv.innerHTML= '<iframe src="update_status.php" width="1000px" height="500px"></iframe>';
     }
     else {
         contentDiv.innerHTML = '<h2>' + content + '</h2>' +

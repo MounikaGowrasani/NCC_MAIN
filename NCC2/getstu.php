@@ -25,6 +25,7 @@ if (isset($_GET['camp'])) {
         while ($row = $result->fetch_assoc()) {
             $students[] = $row['regno'];
         }
+        echo '<form action="update_status.php" method="post">'; 
 
         // Display students with checkboxes and additional details
         foreach ($students as $student) {
@@ -69,8 +70,10 @@ if (isset($_GET['camp'])) {
 } else {
     echo "Invalid camp selection";
 }
-echo '<button type="submit">Submit</button>'; 
+echo '<button type=" submit" >Submit</button>'; 
+echo '</form>';
 $conn->close();
+
 ?>
 <html>
 <style>
@@ -95,4 +98,24 @@ $conn->close();
     height: 150px; /* Adjust the height as needed */
 }
 </style>
+<script>
+function updateStatus(checkbox) {
+    if (checkbox.checked) {
+        var regNumber = checkbox.value;
+
+        // Send an AJAX request to update the status
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "update_status.php", true);
+        alert("hello");
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                alert("ki")?
+            }
+        };
+        xhr.send("regNumber=" + regNumber);
+    }
+}
+
+</script>
 </html>
