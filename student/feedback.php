@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
     // Check if it's the 1st day of the month
     $username = $_SESSION['uname'];
-    if (date('j') == 1 or date('j')== 5 ) {
+    if (date('j') == 1 or date('j')== 15 ) {
         
         $feedback = $_POST["feedback"];
         $rating = $_POST["rating"];
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // It's not the 1st day of the month, display an alert
-        echo '<script>alert("Feedback can only be submitted on the 1st day of each month.");</script>';
+        echo '<script>alert("Feedback can only be submitted on the 1st & 15th of each month.");</script>';
         echo '<script>window.location.href = "feedback.html";</script>';
     }
 }

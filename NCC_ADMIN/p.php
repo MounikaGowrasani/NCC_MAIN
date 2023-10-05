@@ -294,6 +294,9 @@ if (isset($_SESSION['uname']))
     {
         contentDiv.innerHTML= '<iframe src="registered_camps.php" width="1000px" height="500px"></iframe>';
     }
+    else if(content === 'FEEDBACK'){
+        contentDiv.innerHTML= '<iframe src="feedback.php" width="1000px" height="500px"></iframe>';
+    }
     else {
         contentDiv.innerHTML = '<h2>' + content + '</h2>' +
             '<p>This is the content for ' + content + '</p>';
