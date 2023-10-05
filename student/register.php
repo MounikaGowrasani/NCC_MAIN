@@ -21,24 +21,35 @@ if (isset($_SESSION['campIdd'])) {
     if (isset($_SESSION['uname'])) {
         $username = $_SESSION['uname'];
 
-        // Check if an application with the same campId and regno already exists
-        $checkSql = "SELECT * FROM register WHERE campId = '$campId' AND regno = '$username'";
-        $checkResult = $conn->query($checkSql);
+        // Query to fetch user information
+        $sql1 = "SELECT * FROM enroll WHERE regimental_number = '$username'";
+        $result1 = $conn->query($sql1);
 
-        if ($checkResult->num_rows == 0) {
-            // No existing application, proceed to insert a new one
-            $status = "no";
+        if ($result1->num_rows > 0) {
+            $row1 = $result1->fetch_assoc();
+            $regno = $row1['Registration_number'];
 
-            // Insert data into the 'register' table
-            $sql = "INSERT INTO register (campId, regno, status) VALUES ('$campId', '$username', '$status')";
+            // Check if the registration number already exists in the 'register' table
+            $checkSql = "SELECT * FROM register WHERE regno = '$regno' and campid='$campId'";
+            $checkResult = $conn->query($checkSql);
 
-            if ($conn->query($sql) === TRUE) {
-                echo "Application submitted successfully.";
+            if ($checkResult->num_rows > 0) {
+                // Registration number already exists, display an alert box
+                echo "<script>alert('Already applied for this camp');window.history.back();</script>";
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                $status = "no";
+
+                // Insert data into the 'register' table
+                $sql = "INSERT INTO register VALUES ('$campId', '$regno', '$status')";
+
+                if ($conn->query($sql) === TRUE) {
+                    echo "Application submitted successfully.";
+                } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
             }
         } else {
-            echo "You have already applied for this camp.";
+            echo "No records found for the given username.";
         }
     } else {
         echo "Session error: 'uname' not set in the session.";
@@ -47,6 +58,6 @@ if (isset($_SESSION['campIdd'])) {
     // Close the database connection
     $conn->close();
 } else {
-    echo "Session error: 'campIdd' not set in the session.";
+    echo "Session error: 'campid' not set in the session.";
 }
 ?>
