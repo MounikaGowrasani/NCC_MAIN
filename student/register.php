@@ -29,15 +29,24 @@ if (isset($_SESSION['campIdd'])) {
             $row1 = $result1->fetch_assoc();
             $regno = $row1['Registration_number'];
 
-            $status = "no";
+            // Check if the student has already applied for this camp
+            $checkSql = "SELECT * FROM register WHERE campid = '$campId' AND student_username = '$regno'";
+            $checkResult = $conn->query($checkSql);
 
-            // Insert data into the 'register' table
-            $sql = "INSERT INTO register VALUES ('$campId', '$regno', '$status')";
-
-            if ($conn->query($sql) === TRUE) {
-                echo "Application submitted successfully.";
+            if ($checkResult->num_rows > 0) {
+                echo '<script>alert("You have already applied for this camp.");';
+                echo 'window.location.href = "previous_page.php";</script>';
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                $status = "no";
+
+                // Insert data into the 'register' table
+                $sql = "INSERT INTO register VALUES ('$campId', '$regno', '$status')";
+
+                if ($conn->query($sql) === TRUE) {
+                    echo "Application submitted successfully.";
+                } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
             }
         } else {
             echo "No records found for the given username.";

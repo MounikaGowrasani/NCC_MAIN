@@ -52,6 +52,9 @@ if (isset($_POST['submit'])) {
         $insertSql = "INSERT INTO logins (username, passwords,type) VALUES (?, ?,?)";
 
         echo '<script>alert("Regimental number updated successfully");window.location.href ="regment.php";</script>';
+<<<<<<< HEAD
+        
+=======
         $insertSql = "INSERT INTO logins (username, passwords,type) VALUES (?, ?,?)";
     
     // You can generate a random password for the user or set a default one.
@@ -68,6 +71,7 @@ if (isset($_POST['submit'])) {
     } else {
         echo "Error inserting the username.";
     }
+>>>>>>> 0d1e6536ee10aeea93c0b1db381ec060261ad091
         
     } else {
         echo "Error updating Regimental Number: " . $stmt->error;
