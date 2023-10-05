@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // It's not the 1st day of the month, display an alert
-        echo '<script>alert("Feedback can only be submitted on the 1st day of each month.");</script>';
+        echo '<script>alert("Feedback can only be submitted on the 1st & 15th of each month.");</script>';
         echo '<script>window.location.href = "feedback.html";</script>';
     }
 }
