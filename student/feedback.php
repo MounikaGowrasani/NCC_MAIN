@@ -3,17 +3,16 @@ require 'dbcon.php';
 
 // Process form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    session_start();
     // Check if it's the 1st day of the month
-    if (date('j') == 1 or date('j')== 21 ) {
-        $regno = $_POST["regno"];
+    $username = $_SESSION['uname'];
+    if (date('j') == 1 or date('j')== 5 ) {
+        
         $feedback = $_POST["feedback"];
         $rating = $_POST["rating"];
-
         $feedbackdate = date('Y-m-d');
-        
         // Insert the data into the database
-        $sql = "INSERT INTO feedback (regno, feedback, rating, feedbackdate) VALUES ('$regno', '$feedback', '$rating', '$feedbackdate')";
-
+        $sql = "INSERT INTO feedback (regno, feedback, rating, feedbackdate) VALUES ('$username', '$feedback', '$rating', '$feedbackdate')";
         if ($conn->query($sql) === TRUE) {
             echo "Feedback submitted successfully!";
         } else {
