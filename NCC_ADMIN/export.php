@@ -11,7 +11,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-	header("Content-Type: application/xls");    
+	 
+	header("Content-Type: application/vnd.ms-excel"); 
 	header("Content-Disposition: attachment; filename=student(10A)_list.xls");  
 	header("Pragma: no-cache"); 
 	header("Expires: 0");
@@ -64,7 +65,7 @@ if ($conn->connect_error) {
 				<td>".$fetch['Email']."</td>
 				<td>".$fetch['Gender']."</td>
 				<td>".$fetch['Registration_number']."</td>
-				<td><img src='data:image/jpeg;base64,".base64_encode($fetch['photo_data'])."' alt='Photo' style='max-width: 50px; max-height: 50px;'></td>
+				<td><img src='data:image/png;base64," . base64_encode($fetch['photo_data']) . "' alt='Student Photo' width='100'></td>
 				<td>".$fetch['Name_of_school']."</td>
 				<td>".$fetch['Stream']."</td>
 				<td>".$fetch['PAN_crad']."</td>
