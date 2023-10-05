@@ -36,25 +36,9 @@ if (isset($_POST['submit'])) {
     $stmt->bind_param("ss", $newRegimentalNumber, $studentId);
     if ($stmt->execute())
      {
-            $insertSql = "INSERT INTO logins (username, passwords,type) VALUES (?, ?,?)";
-    
-    // You can generate a random password for the user or set a default one.
-    // Here, I'm using 'password123' as a default password for the example.
-    //$defaultPassword = password_hash('Vignan@123', PASSWORD_DEFAULT);
-    
-    $stmt = $conn->prepare($insertSql);
-    $defaultPassword='Vignan@123';
-    $cadet='cadet';
-    $stmt->bind_param("sss", $newRegimentalNumber, $defaultPassword,$cadet);
-
-    if ($stmt->execute()) {
-
-        $insertSql = "INSERT INTO logins (username, passwords,type) VALUES (?, ?,?)";
+         
 
         echo '<script>alert("Regimental number updated successfully");window.location.href ="regment.php";</script>';
-<<<<<<< HEAD
-        
-=======
         $insertSql = "INSERT INTO logins (username, passwords,type) VALUES (?, ?,?)";
     
     // You can generate a random password for the user or set a default one.
@@ -66,36 +50,18 @@ if (isset($_POST['submit'])) {
     $cadet='cadet';
     $stmt->bind_param("sss", $newRegimentalNumber, $defaultPassword,$cadet);
 
-    if ($stmt->execute()) {
+    if ($stmt->execute()) 
+    {
         echo "Regimental number updated and inserted as a username.";
-    } else {
+    } else 
+    {
         echo "Error inserting the username.";
     }
->>>>>>> 0d1e6536ee10aeea93c0b1db381ec060261ad091
         
-    } else {
+    } else 
+    {
         echo "Error updating Regimental Number: " . $stmt->error;
-
-// You can generate a random password for the user or set a default one.
-// Here, I'm using 'password123' as a default password for the example.
-//$defaultPassword = password_hash('Vignan@123', PASSWORD_DEFAULT);
-
-$stmt = $conn->prepare($insertSql);
-$defaultPassword='Vignan@123';
-$cadet='cadet';
-$stmt->bind_param("sss", $newRegimentalNumber, $defaultPassword,$cadet);
-
-if ($stmt->execute()) 
-{
-    echo "Regimental number updated and inserted as a username.";
-} 
-else
-{
-    echo "Error inserting the username.";
 }
-    }
-}
-$conn->close();
     }
 }
 ?>
