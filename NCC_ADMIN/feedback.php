@@ -46,7 +46,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$query="SELECT * FROM feedback INNER JOIN enroll ON feedback.regno = enroll.regimental_number WHERE enroll.ncc_unit_enrolled='65-G,10(A)GBN NCC,Guntur' OR enroll.ncc_unit_enrolled='10A'";
+$query="SELECT * FROM feedback ";
 
 
     // Execute the query
