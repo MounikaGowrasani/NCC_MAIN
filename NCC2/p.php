@@ -292,7 +292,7 @@ if (isset($_SESSION['uname']))
     }
     else if(content === 'RegCAMPS')
     {
-        contentDiv.innerHTML= '<iframe src="update_status.php" width="1000px" height="500px"></iframe>';
+        contentDiv.innerHTML= '<iframe src="confirmed_stu.php" width="1000px" height="500px"></iframe>';
     }
     else if(content === 'FEEDBACK')
     {

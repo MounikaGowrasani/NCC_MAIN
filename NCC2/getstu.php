@@ -1,3 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Students</title>
+    <style>
+        .student-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .student-details {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .student-photo {
+            flex: 1;
+            text-align: right;
+        }
+
+        .student-photo img {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<form action="update_status.php" method="post"> <!-- Form to submit selected students -->
 <?php
 $servername = "localhost"; // Replace with your database server hostname
 $username = "root"; // Replace with your database username
@@ -16,7 +47,7 @@ if (isset($_GET['camp'])) {
     $selectedCamp = $_GET['camp'];
 
     // Query to retrieve students for the selected camp
-    $query = "SELECT regno FROM register WHERE campid = '$selectedCamp'";
+    $query = "SELECT regno FROM register WHERE campid = '$selectedCamp' and status='no'";
 
     $result = $conn->query($query);
 
@@ -25,7 +56,6 @@ if (isset($_GET['camp'])) {
         while ($row = $result->fetch_assoc()) {
             $students[] = $row['regno'];
         }
-        echo '<form action="update_status.php" method="post">'; 
 
         // Display students with checkboxes and additional details
         foreach ($students as $student) {
@@ -70,52 +100,13 @@ if (isset($_GET['camp'])) {
 } else {
     echo "Invalid camp selection";
 }
-echo '<button type=" submit" >Submit</button>'; 
-echo '</form>';
+
+
 $conn->close();
 
 ?>
-<html>
-<style>
-.student-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
+    <button type="submit">Update Selected Students</button>
+</form>
 
-.student-details {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.student-photo {
-    flex: 1;
-    text-align: right;
-}
-
-.student-photo img {
-    width: 150px; /* Adjust the width as needed */
-    height: 150px; /* Adjust the height as needed */
-}
-</style>
-<script>
-function updateStatus(checkbox) {
-    if (checkbox.checked) {
-        var regNumber = checkbox.value;
-
-        // Send an AJAX request to update the status
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "update_status.php", true);
-        alert("hello");
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                alert("ki")?
-            }
-        };
-        xhr.send("regNumber=" + regNumber);
-    }
-}
-
-</script>
+</body>
 </html>
