@@ -237,12 +237,13 @@ $conn->close();
         
         window.location.href = 'export25.php';
         }
-        function exportToWord() {
+    function exportToWord(){
         
         window.location.href = 'exportw.php';
         }
         function exportToWord25() {
         
         window.location.href = 'exportw25.php';
+        }
         
 </script>
