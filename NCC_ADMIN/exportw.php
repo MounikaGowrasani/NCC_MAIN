@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch data from the database
-$sql = "SELECT regimental_number,stu_name,photo_data FROM enroll where  ncc_unit_enrolled='65-G,10(A)' OR ncc_unit_enrolled='10A'";
+$sql = "SELECT regimental_number,stu_name,photo_data FROM enroll where  ncc_unit_enrolled='65-G,10(A)GBN NCC,Guntur' OR ncc_unit_enrolled='10A'";
 $result = $conn->query($sql);
 
 // Create an HTML table
