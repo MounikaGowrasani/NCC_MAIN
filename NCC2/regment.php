@@ -110,8 +110,8 @@ if ($result->num_rows > 0) {
 } else {
     echo "No results found";
 }
-echo "<button onclick='exportToExcel()'>Export to Excel</button>";
-echo "<button id='exportBu' onclick='exportToWord()'>Export to Word</button>";
+echo "<button onclick='exportToExcel25()'>Export to Excel</button>";
+echo "<button id='exportBu' onclick='exportToWord25()'>Export to Word</button>";
 // Close the database connection
 $conn->close();
 ?>
