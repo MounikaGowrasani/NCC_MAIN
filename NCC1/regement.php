@@ -109,7 +109,21 @@ if ($result->num_rows > 0) {
 } else {
     echo "No results found";
 }
-
+echo "<button onclick='exportToExcel()'>Export to Excel</button>";
+echo "<button id='exportBu' onclick='exportToWord()'>Export to Word</button>";
 // Close the database connection
 $conn->close();
 ?>
+<script>
+function exportToExcel() {
+        
+        window.location.href = '/NCC_MAIN/NCC_ADMIN//export.php';
+        }
+        
+    function exportToWord(){
+        
+        window.location.href = '/NCC_MAIN/NCC_ADMIN//exportw.php';
+        }
+
+        
+</script>
