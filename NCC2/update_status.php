@@ -1,7 +1,4 @@
 <?php
-<<<<<<< HEAD
-echo "hello";
-=======
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -38,4 +35,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
->>>>>>> dd61655d3126bb58c572266fcba950a635ed3df5

@@ -57,7 +57,7 @@ if ($conn->connect_error) {
  
 	$query = $conn->query("SELECT * FROM `enroll` where ncc_unit_enrolled='65-G,10(A)GBN NCC,Guntur' OR ncc_unit_enrolled='10A'") or die(mysqli_errno());
 	while($fetch = $query->fetch_array()){
- 
+		$aadhar_number ="'". $fetch['Aadhar_number'];
 	$output .= "
 				<tr style='width: 100px; height: 100px;'>
 				<td>".$fetch['stu_name']."</td>
@@ -69,7 +69,7 @@ if ($conn->connect_error) {
 				<td>".$fetch['Name_of_school']."</td>
 				<td>".$fetch['Stream']."</td>
 				<td>".$fetch['PAN_crad']."</td>
-				<td>".$fetch['Aadhar_number']."</td>
+				<td>".$aadhar_number."</td>
 				<td>".$fetch['Date__of__birth']."</td>
 				<td>".$fetch['father_name']."</td>
 				<td>".$fetch['mother_name']."</td>
