@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 echo "<h2>138-B,25(A)BN NCC,Guntur</h2>";
-$sql = "SELECT * FROM enroll where ncc_unit_enrolled='138-B,25(A)BN NCC,Guntur' OR ncc_unit_enrolled='25A'";
+$sql = "SELECT * FROM enroll where ncc_unit_enrolled='138-B,25(A)' OR ncc_unit_enrolled='25A'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo "<style>
@@ -107,6 +107,7 @@ if ($result->num_rows > 0) {
 }
 echo "<br><br>";
 echo "<button onclick='exportToExcel25()'>Export to Excel</button>";
+echo "<button id='exportBu' onclick='exportToWord25()'>Export to Word</button>";
 echo "<br><br>";
 echo "<h2>65-G,10(A)GBN NCC,Guntur</h2>";
 $sql = "SELECT * FROM enroll where ncc_unit_enrolled='65-G,10(A)GBN NCC,Guntur' OR ncc_unit_enrolled='10A'";
@@ -198,6 +199,7 @@ if ($result->num_rows > 0) {
 
 echo "<br><br>";
 echo "<button id='exportButton' onclick='exportToExcel()'>Export to Excel</button>";
+echo "<button id='exportBu' onclick='exportToWord()'>Export to Word</button>";
 echo "<br><br>";
 // Close the database connection
 $conn->close();
@@ -235,4 +237,13 @@ $conn->close();
         
         window.location.href = 'export25.php';
         }
+    function exportToWord(){
+        
+        window.location.href = 'exportw.php';
+        }
+        function exportToWord25() {
+        
+        window.location.href = 'exportw25.php';
+        }
+        
 </script>
