@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 echo "<h2>138-B,25(A)BN NCC,Guntur</h2>";
-$sql = "SELECT * FROM enroll where ncc_unit_enrolled='138-B,25(A)' OR ncc_unit_enrolled='25A'";
+$sql = "SELECT * FROM enroll where ncc_unit_enrolled='138-B,25(A)BN NCC,Guntur' OR ncc_unit_enrolled='25A'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo "<style>
