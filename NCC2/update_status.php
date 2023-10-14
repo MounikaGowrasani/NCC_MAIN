@@ -25,8 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $updateQuery = "UPDATE register SET status = 'yes' WHERE regno = '$regNumber' and campid='$campid'";
 
             if ($conn->query($updateQuery) === TRUE) {
-                echo $campid;
-                //echo '<script>alert("Status updated successfully ");window.location.href ="confirmed_stu.php";</script>';
+                echo '<script>alert("Status updated successfully ");window.location.href ="confirmed_stu.php";</script>';
             } else {
                 echo "Error updating status: " . $conn->error . "<br>";
             }
