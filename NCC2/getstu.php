@@ -28,7 +28,7 @@
 </head>
 <body>
 
-<form action="update_status.php" method="post"> <!-- Form to submit selected students -->
+<form action="update_status.php?camp=<?php echo $_GET['camp']; ?>" method="post"> <!-- Form to submit selected students -->
 <?php
 $servername = "localhost"; // Replace with your database server hostname
 $username = "root"; // Replace with your database username

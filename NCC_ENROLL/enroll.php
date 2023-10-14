@@ -54,8 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $convicted_by_criminal_court = $_POST['enableInput'];
 
-    $convicted_by_criminal_court = $_POST['convicted_by_criminal_court'];
-$criminal_court_details = $_POST['criminal_court_details'];
 $file_name = $_POST['file_name'];
 $file_type = $_POST['file_type'];
 $file_data = $_POST['file_data'];
@@ -118,8 +116,8 @@ $file_data = base64_decode($file_data_base64);
         } else {
             echo "Error: " ."<br>" . $stmt->error;
         }
-    }
         // Close the database connection
         $conn->close();
     }
+}
     ?>

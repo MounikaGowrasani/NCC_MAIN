@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM enroll where ncc_unit_enrolled='65-G,10(A)' OR ncc_unit_enrolled='10A'";
+$sql = "SELECT * FROM enroll where ncc_unit_enrolled='65-G,10(A)GBN NCC,Guntur' OR ncc_unit_enrolled='10A'";
 
 $result = $conn->query($sql);
 
@@ -109,7 +109,21 @@ if ($result->num_rows > 0) {
 } else {
     echo "No results found";
 }
-
+echo "<button onclick='exportToExcel()'>Export to Excel</button>";
+echo "<button id='exportBu' onclick='exportToWord()'>Export to Word</button>";
 // Close the database connection
 $conn->close();
 ?>
+<script>
+function exportToExcel() {
+        
+        window.location.href = '/NCC_MAIN/NCC_ADMIN//export.php';
+        }
+        
+    function exportToWord(){
+        
+        window.location.href = '/NCC_MAIN/NCC_ADMIN//exportw.php';
+        }
+
+        
+</script>
