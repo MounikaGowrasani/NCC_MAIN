@@ -24,11 +24,13 @@ $polAllowance = $_POST['polAllowance'];
 $numberOfStudents = $_POST['numberOfStudents'];
 $startDateTimestamp = strtotime($startDate);
 $endDateTimestamp = strtotime($endDate);
-$numberOfDays = ($endDateTimestamp - $startDateTimestamp) / (60 * 60 * 24) ; // Number of days between start and end date
-$totalExpenditure = ($dailyAllowance + $travelAllowance + $polAllowance) *($numberOfDays+1);
+$numberOfDays = ($endDateTimestamp - $startDateTimestamp) / (60 * 60 * 24); // Number of days between start and end date
+$totalExpenditure = ($dailyAllowance + $travelAllowance + $polAllowance) * $numberOfDays;
+$currentYear = date("Y");
+$campId=$campName."@".$currentYear;
 // Insert data into the database
 $sql = "INSERT INTO camps 
-VALUES ('$campName', '$location', '$startDate', '$endDate', $dailyAllowance, $travelAllowance, $polAllowance, $numberOfStudents,$totalExpenditure)";
+VALUES ('$campId','$campName', '$location', '$startDate', '$endDate', $dailyAllowance, $travelAllowance, $polAllowance, $numberOfStudents,$totalExpenditure)";
 echo "hiii";
 if ($conn->query($sql) === TRUE) {
     echo "Record inserted successfully.";

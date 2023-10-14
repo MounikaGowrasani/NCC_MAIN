@@ -98,7 +98,7 @@ if (isset($_GET['camp'])) {
         echo "No students registered for the selected camp";
     }
 } else {
-    echo "Invalid camp selection";
+    echo "No members to select";
 }
 
 
