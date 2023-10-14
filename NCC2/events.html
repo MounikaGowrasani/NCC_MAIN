@@ -48,7 +48,11 @@ form {
 </head>
 <body>
     <h2>Add Events</h2>
+<<<<<<< HEAD
+    <form action="events.php" method="post">
+=======
     <form action="events.php" method="POST">
+>>>>>>> d10a516a7229c5113c6d2041b01ed0b5e808077c
         <label for="eventName">Event Name:</label>
         <br>
         <input type="text" id="eventName" name="eventName" required><br><br>
@@ -56,9 +60,9 @@ form {
         <label for="eventType">Event Type:</label>
         <br>
         <select id="eventType" name="eventType">
-            <option value="Conference">Institution</option>
-            <option value="Workshop">State
-            <option value="Seminar">National</option>
+            <option value="Institution">Institution</option>
+            <option value="state">State</option>
+            <option value="National">National</option>
         </select><br><br>
 
         <label for="startDate">From Date:</label>
@@ -68,7 +72,6 @@ form {
         <label for="endDate">To Date:</label>
         <br>
         <input type="date" id="endDate" name="endDate" required><br><br>
-
         <input type="submit" value="Submit">
     </form>
 </body>

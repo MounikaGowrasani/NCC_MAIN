@@ -21,7 +21,7 @@ $endDate = $_POST['endDate'];
 
 // Generate the event ID (concatenation of eventName and current year)
 $currentYear = date("Y"); // Get the current year
-$eventID = $eventName ."@".$currentYear;
+$eventID = $eventName ."@".'2022';
 // Insert data into the database
 $sql = "INSERT INTO events 
         VALUES ('$eventID', '$eventName', '$eventType', '$startDate', '$endDate')";
