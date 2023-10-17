@@ -43,7 +43,7 @@ if (isset($_SESSION['uname'])) {
         // Output data of each row
         while($row = $result->fetch_assoc()) {
             // Display campid and campname in each row and add an upload certificate button
-            echo "<tr><td>".$row['campid']."</td><td>".$row['campname']."</td><td><button>Upload Certificate</button></td></tr>";
+            echo "<tr><td>".$row['campid']."</td><td>".$row['name']."</td><td><button>Upload Certificate</button></td></tr>";
         }
 
         // Close the table
