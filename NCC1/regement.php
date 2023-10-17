@@ -17,17 +17,39 @@ $sql = "SELECT * FROM enroll where ncc_unit_enrolled='65-G,10(A)GBN NCC,Guntur' 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<style>
-    
-    th,td{
-        padding: 10px;
+    echo "<html>";
+echo "<head>";
+echo "<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
     }
-   
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
     .date {
         font-size: 18px;
         margin: 20px;
     }
-    </style>";
+    .button-container {
+        margin-top: 20px;
+    }
+    .export-button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+</style>";
+echo "</head>";
+echo "<body>";
     echo "<table border=><tr><th>ID</th>
     <th>stu_name</th>
     <th>pno</th>
@@ -109,9 +131,12 @@ if ($result->num_rows > 0) {
 } else {
     echo "No results found";
 }
-echo "<button onclick='exportToExcel()'>Export to Excel</button>";
-echo "<button id='exportBu' onclick='exportToWord()'>Export to Word</button>";
-// Close the database connection
+echo "<div class='button-container'>";
+echo "<button class='export-button' onclick='exportToExcel()'>Export to Excel</button>";
+echo "<button class='export-button' id='exportBu' onclick='exportToWord()'>Export to Word</button>";
+echo "</div>";
+
+
 $conn->close();
 ?>
 <script>

@@ -11,6 +11,29 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+echo "<html>";
+echo "<head>";
+echo "<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    h2 {
+        color: #007bff;
+    }
+</style>";
+echo "</head>";
+echo "<body>";
+
 
 // Get distinct campid values from the database
 $sql = "SELECT DISTINCT campid FROM register";

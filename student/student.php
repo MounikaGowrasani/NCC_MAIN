@@ -275,6 +275,7 @@ if (isset($_SESSION['uname'])) {
                     '<li><a href="#camp" onclick="showContent(\'SCHEDULE\')">VIEW SCHEDULE</a></li>' +
                     '<li><a href="#leave" onclick="showContent(\'EVENTS\')">VIEW EVENTS</a></li>' +
                     '<li><a href="#training" onclick="showContent(\'CAMPS\')">VIEW CAMPS</a></li>' +
+                    '<li><a href="#reg" onclick="showContent(\'RCAMPS\')">REGISTERED CAMPS</a></li>' +
                     '<li><a href="#queries" onclick="showContent(\'FEEDBACK\')">FEEDBACK</a></li>' +
                     '<li><a href="#registeredcamps" onclick="showContent(\'registeredcamps\')">registeredcamps</a></li>' +
                     '<li><a href="#profile" onclick="showContent(\'QUERIES\')">QUERIES</a></li>' +
@@ -298,13 +299,6 @@ if (isset($_SESSION['uname'])) {
     {
         contentDiv.innerHTML= '<iframe src="feedback.html" width="1000px" height="500px"></iframe>';
     }
-    else if(content === 'registeredcamps')
-    {
-        contentDiv.innerHTML= '<iframe src="registeredcamps.php" width="1000px" height="500px"></iframe>';
-    }
-
-    
-
     else {
         contentDiv.innerHTML = '<h2>' + content + '</h2>' +
             '<p>This is the content for ' + content + '</p>';
