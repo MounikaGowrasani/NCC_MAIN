@@ -40,7 +40,7 @@ if (isset($_SESSION['campIdd'])) {
                 $status = "no";
 
                 // Insert data into the 'register' table
-                $sql = "INSERT INTO register VALUES ('$campId', '$regno', '$status')";
+                $sql = "INSERT INTO register VALUES ('$campId', '$regno', '$status','NULL')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "Application submitted successfully.";
