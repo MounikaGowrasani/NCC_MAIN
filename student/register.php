@@ -12,7 +12,7 @@ if (isset($_SESSION['campIdd'])) {
 
     // Create a database connection
     $conn = new mysqli($servername, $username, $password, $database);
-
+    
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -40,7 +40,7 @@ if (isset($_SESSION['campIdd'])) {
                 $status = "no";
 
                 // Insert data into the 'register' table
-                $sql = "INSERT INTO register VALUES ('$campId', '$regno', '$status')";
+                $sql = "INSERT INTO register VALUES ('$campId', '$regno', '$status','NULL')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "Application submitted successfully.";
