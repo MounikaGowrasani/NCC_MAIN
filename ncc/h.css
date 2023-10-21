@@ -235,12 +235,12 @@
         width: 800px; /* Fixed width for the container */
         height: 350px; /* Fixed height for the container */
         overflow: auto; /* Use 'scroll' for always showing scrollbars */
-        
+        text-align: justify;
         background-color:rgb(59, 59, 136);
         color: white;
         font-size: 20px;
         padding: 10px;
-        padding-left: 120px;
+        padding-left: 100px;
         
  }
  .three1{
@@ -253,9 +253,7 @@
     
  }
  .info{
-    padding-bottom: 20px;
-    padding-top: 20px;
-    padding-left: 40px; ;
+    margin-top: 50px;
  }
  .three{
     padding-left: 60px;
@@ -264,10 +262,14 @@
     font-family: "Times New Roman", Times, serif;
 }    
 .obj{
+    margin-right: 100px;
+    margin-left: 0px;
     font-family: sans-serif;
 }
 .for{
     font-family: sans-serif;
+    margin-right: 100px;
+    margin-left: 0px;
 }
 
 .h1 {
