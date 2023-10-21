@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         /* Basic CSS for layout */
         body {
@@ -11,12 +13,16 @@
         }
 
         #header {
-            background-color: #333;
-            color: #fff;
+            
             padding: 0px;
             text-align: center;
             display: flex; 
             align-items: center; 
+            background-color: #e2a33b;
+background-image: linear-gradient(90deg, #e2a33b 0%, #ed742d 100%);
+
+
+
         }
 
         #menu-button {
@@ -150,9 +156,14 @@
             font-size: 30px;
             text-align: center;
         }
+      
         #menu a:hover {
-            background-color: #007bff;
+            
             color: #fff;
+            box-shadow: 0 0 10px rgba(255, 128, 0, 0.5);
+            transform: scale(1.05); /* Scale up on hover */
+    background: linear-gradient(to right, #ff8000, #ff6f00); /* Gradient background on hover */
+            
         }
 
         /* Hide the dashboard by default */
@@ -249,19 +260,17 @@ if (isset($_SESSION['uname']))
             var menu = document.getElementById('menu');
             var dashboard = document.getElementById('dashboard');
                 dashboard.style.display = 'block';
-                menu.innerHTML = '<ul style="list-style-type:disc;">' +
-                    '<li><a href="#camp" onclick="showContent(\'SCHEDULE\')">UPLOAD SCHEDULE</a></li>' +
-                    '<li><a href="#regement.html" onclick="showContent(\'REGMENT\')">ENROLLED STUDENTS</a></li>' +
-                    '<li><a href="#leave" onclick="showContent(\'EVENTS\')">ADD EVENTS</a></li>' +
-                    '<li><a href="#training" onclick="showContent(\'CAMPS\')">ADD CAMPS</a></li>' +
-                    '<li><a href="#training" onclick="showContent(\'VCAMPS\')">VIEW CAMPS</a></li>' +
-                    '<li><a href="#training" onclick="showContent(\'RegCAMPS\')">Registered Students</a></li>' +
+                menu.innerHTML = '<ul style="list-style-type:none; padding: 0;">' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-calendar-alt" style="margin-right: 10px;"></i><a href="#camp" onclick="showContent(\'SCHEDULE\')">UPLOAD SCHEDULE</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-user-graduate" style="margin-right: 10px;"></i><a href="#regement.html" onclick="showContent(\'REGMENT\')">ENROLLED STUDENTS</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-calendar-plus" style="margin-right: 10px;"></i><a href="#leave" onclick="showContent(\'EVENTS\')">ADD EVENTS</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-campground" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'CAMPS\')">ADD CAMPS</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-list" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'VCAMPS\')">VIEW CAMPS</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-users" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'RegCAMPS\')">CAMP STUDENTS</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-user-graduate" style="margin-right: 10px;"></i><a href="http://192.168.10.10/stuCurStatusSectionReg21.jsp" onclick="showContent(\'CADET DETAILS\')">CADET INFORMATION</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-comments" style="margin-right: 10px;"></i><a href="#feedback.html" onclick="showContent(\'FEEDBACK\')">VIEW FEEDBACK</a></li>' +
+    '</ul>';
 
-                    '<li><a href="http://192.168.10.10/stuCurStatusSectionReg21.jsp" onclick="showContent(\'CADET DETAILS\')">CADET INFORMATION</a></li>' +
-                    '<li><a href="#feedback.html" onclick="showContent(\'FEEDBACK\')">VIEW FEEDBACK</a></li>' +
-                    '<li><a href="#profile" onclick="showContent(\'QUERIES\')">VIEW QUERIES</a></li>' +
-                    '</ul>';
-    
         // JavaScript function to show content for the selected link
         function showContent(content) {
     var contentDiv = document.getElementById('content');
