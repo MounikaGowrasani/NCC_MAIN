@@ -121,7 +121,8 @@ background-image: linear-gradient(90deg, #e2a33b 0%, #ed742d 100%);
 
         #content {
             width: 80%;
-            padding: 20px;
+            padding: 0px;
+            
         }
 
         #footer {
@@ -156,7 +157,11 @@ background-image: linear-gradient(90deg, #e2a33b 0%, #ed742d 100%);
             font-size: 30px;
             text-align: center;
         }
-      
+      iframe{
+        border:none;
+       
+
+      }
         #menu a:hover {
             
             color: #fff;
@@ -246,7 +251,7 @@ if (isset($_SESSION['uname']))
 
         <div id="dashboard">
             <div id="content">
-                <img src="10.jpeg" alt="image" height="500px" width="1000px">
+                <img src="10.jpeg" alt="image" height="600px" width="1200px">
             </div>
         </div>
     </div>
@@ -264,7 +269,7 @@ if (isset($_SESSION['uname']))
     '<li style="display: flex; align-items: center;"><i class="fas fa-user-graduate" style="margin-right: 10px;"></i><a href="#regement.html" onclick="showContent(\'REGMENT\')">ENROLLED STUDENTS</a></li>' +
     '<li style="display: flex; align-items: center;"><i class="fas fa-calendar-plus" style="margin-right: 10px;"></i><a href="#leave" onclick="showContent(\'EVENTS\')">ADD EVENTS</a></li>' +
     '<li style="display: flex; align-items: center;"><i class="fas fa-campground" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'CAMPS\')">ADD CAMPS</a></li>' +
-    '<li style="display: flex; align-items: center;"><i class="fas fa-list" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'VCAMPS\')">VIEW CAMPS</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-list" style="margin-right: 10px;"></i><a href="#viewcamps" onclick="showContent(\'VCAMPS\')">VIEW CAMPS</a></li>' +
     '<li style="display: flex; align-items: center;"><i class="fas fa-users" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'RegCAMPS\')">CAMP STUDENTS</a></li>' +
     '<li style="display: flex; align-items: center;"><i class="fas fa-user-graduate" style="margin-right: 10px;"></i><a href="http://192.168.10.10/stuCurStatusSectionReg21.jsp" onclick="showContent(\'CADET DETAILS\')">CADET INFORMATION</a></li>' +
     '<li style="display: flex; align-items: center;"><i class="fas fa-comments" style="margin-right: 10px;"></i><a href="#feedback.html" onclick="showContent(\'FEEDBACK\')">VIEW FEEDBACK</a></li>' +
@@ -275,11 +280,11 @@ if (isset($_SESSION['uname']))
     var contentDiv = document.getElementById('content');
     if (content === 'EVENTS') {
         // Load events.html in an iframe
-        contentDiv.innerHTML = '<iframe src="events.html" width="1000px" height="500px"></iframe>';
+        contentDiv.innerHTML = '<iframe src="events.html"  width="1000px" height="600px" ></iframe>';
     } 
     else if(content === 'CAMPS')
     {
-        contentDiv.innerHTML= '<iframe src="camps.html" width="1000px" height="500px"></iframe>';
+        contentDiv.innerHTML= '<iframe src="camps.html" width="1000px" height="550px"></iframe>';
     }
     else if(content === 'SCHEDULE')
     {
@@ -291,7 +296,7 @@ if (isset($_SESSION['uname']))
     }
     else if(content === 'VCAMPS')
     {
-        contentDiv.innerHTML= '<iframe src="view_camps.php" width="1000px" height="500px"></iframe>';
+        contentDiv.innerHTML= '<iframe src="view_camps.php" width="1000px" height="500px" ></iframe>';
     }
     else if(content === 'RCAMPS')
     {
