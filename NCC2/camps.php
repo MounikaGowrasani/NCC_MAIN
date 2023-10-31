@@ -29,13 +29,21 @@ $totalExpenditure = ($dailyAllowance + $travelAllowance + $polAllowance) * $numb
 $currentYear = date("Y");
 $campId=$campName."@".$currentYear;
 // Insert data into the database
-$sql = "INSERT INTO camps 
-VALUES ('$campId','$campName', '$location', '$startDate', '$endDate', $dailyAllowance, $travelAllowance, $polAllowance, $numberOfStudents,$totalExpenditure)";
-echo "hiii";
-if ($conn->query($sql) === TRUE) {
-    echo "Record inserted successfully.";
+$checkCampIdQuery = "SELECT * FROM camps WHERE campId='$campId'";
+$checkCampIdResult = $conn->query($checkCampIdQuery);
+
+if ($checkCampIdResult->num_rows > 0) {
+    echo "<script>alert('Camp ID already exists!'); window.history.back();</script>";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    // Insert data into the database
+    $insertSql = "INSERT INTO camps 
+    VALUES ('$campId','$campName', '$location', '$startDate', '$endDate', $dailyAllowance, $travelAllowance, $polAllowance, $numberOfStudents,$totalExpenditure)";
+    
+    if ($conn->query($insertSql) === TRUE) {
+        echo "Record inserted successfully.";
+    } else {
+        echo "Error: " . $insertSql . "<br>" . $conn->error;
+    }
 }
 
 // Close the database connection

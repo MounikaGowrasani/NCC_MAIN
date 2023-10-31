@@ -3,6 +3,7 @@
 <head>
     <title>Camps</title>
     <style>
+        
         /* CSS styles for the page */
         body {
             font-family: Arial, sans-serif;
@@ -45,7 +46,7 @@
     margin-top: 5px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ff7f50;
     border-radius: 5px;
     background-color: #fff; /* Background color for the dropdown */
 }
@@ -72,17 +73,71 @@ select#campName:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
 
-        input[type="button"],
-        input[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            margin: 5px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #ff7f50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: left;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #ffa07a;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="button"],
+input[type="submit"] {
+    width: 48%;
+    background-color: #ff7f50;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background-color: #ff6347;
+}
+
+@media (max-width: 768px) {
+    input[type="button"],
+    input[type="submit"] {
+        width: 50%;
+    }
+}
+
+       
 
         #totalExpenditure {
             background-color: #f0f0f0;
@@ -93,7 +148,7 @@ select#campName:focus {
 </head>
 <body>
     <h2>Camps Information</h2>
-    <form action="/NCC_MAIN/NCC2/camps.php" method="post">
+    <form action="camps.php" method="post">
         <label for="campName">Camp Name:</label>
         <br>
         <select id="campName" name="campName" required>

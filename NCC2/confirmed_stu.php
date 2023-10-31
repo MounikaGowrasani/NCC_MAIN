@@ -22,13 +22,13 @@ echo "<style>
     th, td {
         padding: 8px;
         text-align: left;
-        border: 1px solid #ddd;
+        border: 2px solid #ddd;
     }
     th {
         background-color: #f2f2f2;
     }
     h2 {
-        color: #007bff;
+        color: #FF9546;;
     }
 </style>";
 echo "</head>";
