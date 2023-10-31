@@ -29,7 +29,7 @@ if (isset($_SESSION['uname'])) {
         // echo "Registration Number: " . $registrationNumber;
     }
     // Query to fetch campid, campname, and certificate status based on Registration_number
-    $sql = "SELECT r.campid, c.name, r.camp_certificate
+    $sql = "SELECT r.campid, c.name,r.registerid
             FROM camps c
             JOIN register r ON c.campid = r.campid
             WHERE r.regno = '$registrationNumber' AND r.status='yes'";
@@ -39,28 +39,34 @@ if (isset($_SESSION['uname'])) {
     if ($result->num_rows > 0) {
         // Display table header and form
         echo "<form action='upload_certificate.php' method='post' enctype='multipart/form-data'>";
-        echo "<table border='1'><tr><th>Camp ID</th><th>Camp Name</th><th>Upload/Download Certificate</th></tr>";
+        echo "<table border='1'><tr><th>Serial No.</th><th>Camp ID</th><th>Camp Name</th><th>Upload/Download Certificate</th></tr>";
+        $serialNumber = 1;
 
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
             // Display campid, campname, and handle upload or download based on certificate status
             $campid = $row['campid'];
-            $camp_certificate = $row['camp_certificate'];
+            $registerid=$row['registerid'];
+            $certificateExists = false;
+            $checkCertificateQuery = "SELECT certificate FROM camp_certificate WHERE registerid='$registerid'";
+            $certificateResult = $conn->query($checkCertificateQuery);
+            if ($certificateResult->num_rows > 0) {
+                $certificateExists = true;
+            }
+            echo "<tr><td>".$serialNumber."</td><td>".$campid."</td><td>".$row['name']."</td><td>";
 
-            echo "<tr><td>".$campid."</td><td>".$row['name']."</td><td>";
+            if (!$certificateExists) {
+                echo "<input type='hidden' name='registerid' value='$registerid'>";
+                echo "<a href='upload_certificate.php?registerid=$registerid'>Upload Certificate</a>";
 
-            if (is_null($camp_certificate)) {
-                // If the certificate is NULL, allow uploading a new certificate
-                echo "<input type='file' name='certificate'/>";
-                echo "<input type='hidden' name='campid' value='$campid'/>";
-                echo "<input type='hidden' name='registrationNumber' value='$registrationNumber'/>";
-                echo "<input type='submit' name='upload_$campid' value='Upload Certificate'>";
             } else {
                 // If a certificate exists, display a link to download it
-                echo "<a href='download_certificate.php?campid=$campid' download>Download Certificate</a>";
+                echo "<a href='download_certificate.php?registerid=$registerid' download>Download Certificate</a>";
+
             }
 
             echo "</td></tr>";
+            $serialNumber++;
         }
 
         // Close the table
