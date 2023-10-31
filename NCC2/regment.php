@@ -1,3 +1,5 @@
+
+
 <?php
 $servername = "localhost";
 $username = "root";
@@ -6,7 +8,7 @@ $dbname = "ncc";
 
 // Create a connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-$conn->set_charset("utf8");
+
 // Check the connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -17,17 +19,66 @@ $sql = "SELECT * FROM enroll where ncc_unit_enrolled='138-B,25(A)BN NCC,Guntur' 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<style>
-    
-    th,td{
-        padding: 10px;
-    }
+    echo "<html>";
+echo "<head>";
+echo "<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light gray background */
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 20px;
+    background-color: #fff; /* White background for the table */
+    border-radius: 10px; /* Rounded corners for the table container */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: FF9546; /* Orange background for table headers */
+    color: black;
+}
+
+.regimental-number {
+    width: 80px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.export-button {
+    background-color: #3498db; /* Blue background for export buttons */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px; /* Rounded corners for buttons */
+}
+
+.export-button:hover {
+    background-color: #2980b9; /* Darker blue shade on hover */
+}
+
    
-    .date {
-        font-size: 18px;
-        margin: 20px;
-    }
-    </style>";
+</style>";
+echo "</head>";
+echo "<body>";
     echo "<table border=><tr><th>ID</th>
     <th>stu_name</th>
     <th>pno</th>
@@ -38,29 +89,31 @@ if ($result->num_rows > 0) {
     <th>Name_of_school</th> 
     <th>Stream</th>
     <th>PAN_card_no</th>
-    <th>file_data</th>
+    <th>Marks memos</th>
     <th>Aadhar_number</th>
-    <th>Date__of__birth</th>
-    <th>father_name</th>
-    <th>mother_name</th>
-    <th>nationality</th>
-    <th>bank_name</th>
-    <th>account_no</th>
-    <th>ifsc_code</th>
-    <th>edu_qualification</th>
-    <th>marks</th>
+    <th>Date__of__birth </th>
+    <th>father_name </th>
+    <th>mother_name </th>
+    <th>nationality </th>
+    <th>bank_name </th>
+    <th>account_no </th>
+    <th>ifsc_code </th>
+    <th>edu_qualification </th>
+    <th>marks </th>
     <th>com_address</th> 
     <th>com_pincode</th>
-    <th>identification_mark1</th>
-    <th>identification_mark2</th>
+    <th>identification_mark1 </th>
+    <th>identification_mark2 </th>
     <th>blood_group</th> 
-    <th>place</th>
+    <th>place </th>
     <th>Date</th>
-    <th>regimental_number</th>
+    <th>Regimental_number</th>
     </tr>";
     $id=1;
+    $alternateColor = false;
     while ($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $id . "</td><td>" . $row["stu_name"] . "</td><td>" . $row["pno"] ."</td><td>" . $row["Email"] . "</td><td>" . $row["Gender"] ."</td><td>" . $row["Registration_number"] . "</td><td>";
+        $rowColor = $alternateColor ? '#FFB476' : '#FFF7E8'; 
+        echo "<tr style='background-color: " . $rowColor . ";'><td>" . $id . "</td><td>" . $row["stu_name"] . "</td><td>" . $row["pno"] ."</td><td>" . $row["Email"] . "</td><td>" . $row["Gender"] ."</td><td>" . $row["Registration_number"] . "</td><td>";
 
         if (isset($row["photo_data"])) {
             // Assuming the "photo_data" column contains the image data
@@ -103,18 +156,22 @@ if ($result->num_rows > 0) {
             echo $row["regimental_number"];
         }
         echo "</td></tr>";
+        $alternateColor = !$alternateColor;
         $id=$id+1;
     }
-
     echo "</table>";
 } else {
     echo "No results found";
 }
-echo "<button onclick='exportToExcel25()'>Export to Excel</button>";
-echo "<button id='exportBu' onclick='exportToWord25()'>Export to Word</button>";
-// Close the database connection
+echo "<div class='button-container'>";
+echo "<button class='export-button' onclick='exportToExcel()'>Export to Excel</button>";
+echo "<button class='export-button' id='exportBu' onclick='exportToWord()'>Export to Word</button>";
+echo "</div>";
+
+
 $conn->close();
 ?>
+
 <script> 
         function exportToExcel25() {
         

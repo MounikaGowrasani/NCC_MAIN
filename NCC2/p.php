@@ -285,7 +285,7 @@ if (isset($_SESSION['uname']))
     {
         contentDiv.innerHTML= '<iframe src="upload.html" width="1000px" height="500px"></iframe>';
     }
-    else if(content === 'SEGMENT')
+    else if(content === 'REGMENT')
     {
         contentDiv.innerHTML= '<iframe src="regment.php" width="1000px" height="500px"></iframe>';
     }
