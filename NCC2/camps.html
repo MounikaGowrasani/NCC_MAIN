@@ -3,6 +3,7 @@
 <head>
     <title>Camps</title>
     <style>
+        
         /* CSS styles for the page */
         body {
             font-family: Arial, sans-serif;
@@ -45,7 +46,7 @@
     margin-top: 5px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ff7f50;
     border-radius: 5px;
     background-color: #fff; /* Background color for the dropdown */
 }
@@ -59,12 +60,43 @@ select#campName::-webkit-select {
     appearance: none; /* Remove the default arrow in Chrome/Safari/Opera */
 }
 
+/* Style the selected option */
+select#campName option {
+    padding: 5px;
+    background-color: #fff;
+    color: #333;
+}
 
 /* Style when the dropdown is focused */
 select#campName:focus {
     border-color: #007bff;
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #ff7f50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: left;
 }
 
 input[type="text"],
@@ -106,12 +138,6 @@ input[type="submit"]:hover {
 }
 
        
-
-        #totalExpenditure {
-            background-color: #f0f0f0;
-            color: #333;
-            font-weight: bold;
-        }
 
         #totalExpenditure {
             background-color: #f0f0f0;
