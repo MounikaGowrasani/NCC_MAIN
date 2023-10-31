@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 $sql = "SELECT DISTINCT campid FROM register";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
+if ($result->num_rows > 0) {  
     // Output data of each row
     while($row = $result->fetch_assoc()) {
         $campid = $row["campid"];

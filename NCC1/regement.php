@@ -20,33 +20,60 @@ if ($result->num_rows > 0) {
     echo "<html>";
 echo "<head>";
 echo "<style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 10px;
-        text-align: left;
-        border: 1px solid #ddd;
-    }
-    th {
-        background-color: #f2f2f2;
-    }
-    .date {
-        font-size: 18px;
-        margin: 20px;
-    }
-    .button-container {
-        margin-top: 20px;
-    }
-    .export-button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        margin-right: 10px;
-    }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light gray background */
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 20px;
+    background-color: #fff; /* White background for the table */
+    border-radius: 10px; /* Rounded corners for the table container */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: FF9546; /* Orange background for table headers */
+    color: black;
+}
+
+.regimental-number {
+    width: 80px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.export-button {
+    background-color: #3498db; /* Blue background for export buttons */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px; /* Rounded corners for buttons */
+}
+
+.export-button:hover {
+    background-color: #2980b9; /* Darker blue shade on hover */
+}
+
+   
 </style>";
 echo "</head>";
 echo "<body>";
@@ -81,8 +108,10 @@ echo "<body>";
     <th>Regimental_number</th>
     </tr>";
     $id=1;
+    $alternateColor = false;
     while ($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $id . "</td><td>" . $row["stu_name"] . "</td><td>" . $row["pno"] ."</td><td>" . $row["Email"] . "</td><td>" . $row["Gender"] ."</td><td>" . $row["Registration_number"] . "</td><td>";
+        $rowColor = $alternateColor ? '#FFB476' : '#FFF7E8'; 
+        echo "<tr style='background-color: " . $rowColor . ";'><td>" . $id . "</td><td>" . $row["stu_name"] . "</td><td>" . $row["pno"] ."</td><td>" . $row["Email"] . "</td><td>" . $row["Gender"] ."</td><td>" . $row["Registration_number"] . "</td><td>";
 
         if (isset($row["photo_data"])) {
             // Assuming the "photo_data" column contains the image data
@@ -125,6 +154,7 @@ echo "<body>";
             echo $row["regimental_number"];
         }
         echo "</td></tr>";
+        $alternateColor = !$alternateColor;
         $id=$id+1;
     }
     echo "</table>";
