@@ -131,7 +131,10 @@ background-image: linear-gradient(90deg, #e2a33b 0%, #ed742d 100%);
             text-align: center;
             padding: 10px;
         }
-
+iframe{
+    border:none;
+    height:600px;
+}
         /* Style links in the menu */
         #menu ul {
             list-style-type: none;
