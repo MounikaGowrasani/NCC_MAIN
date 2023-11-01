@@ -278,7 +278,7 @@ if (isset($_SESSION['uname']))
     var contentDiv = document.getElementById('content');
     if (content === 'EVENTS') {
         // Load events.html in an iframe
-        contentDiv.innerHTML = '<iframe src="events.html" width="1000px" height="500px"></iframe>';
+        contentDiv.innerHTML = '<iframe src="events.html" width="1000px" height="600px"></iframe>';
     } 
     else if(content === 'CAMPS')
     {

@@ -10,14 +10,23 @@
 
         body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #fff;
 }
 
 h2 {
-    color: #333;
+    color: #ff8f44;;
     margin: 10px;
 }
 
+form {
+           
+           max-width: 600px;
+           margin: 0 auto;
+           padding: 20px;
+           background-color:#ccc;
+           border-radius: 5px;
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       }
         label {
             font-weight: bold;
             font-size: 18px;
@@ -35,7 +44,7 @@ h2 {
             border: 1px solid #ff6600; /* Orange border */
             border-radius: 5px;
             font-size: 16px;
-            box-shadow: 0 0 10px rgba(255, 102, 0, 0.3); /* Orange shadow */
+            
         }
 
         select {
@@ -43,7 +52,7 @@ h2 {
         }
 
         input[type="submit"] {
-            background-color: #ff6600; /* Orange background */
+            background-color: #ff8f44; /* Orange background */
             color: #fff;
             padding: 12px 24px;
             border: none;
@@ -54,12 +63,14 @@ h2 {
             display: flex;
             justify-content: space-between;
             align-items: center;
+           
         
            
         }
 
         input[type="submit"]:hover {
-            background-color: #ff3300; /* Darker orange on hover */
+            background-color: #ff6600;
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.3); /* Orange shadow */ /* Darker orange on hover */
         }
     </style>
 
@@ -67,9 +78,9 @@ h2 {
 
 <body>
   
-
+    <center><h2>Add Events</h2></center>
     <form action="events.php" method="POST">
-        <h2>Add Events</h2>
+       
         <label for="eventName">Event Name:</label>
         <br>
         <input type="text" id="eventName" name="eventName" required><br><br>
@@ -90,7 +101,7 @@ h2 {
         <br>
         <input type="date" id="endDate" name="endDate" required><br><br>
 
-        <input type="submit" value="Submit">
+        <center><input type="submit" value="Submit"></center>
     
     </form>
 </body>
