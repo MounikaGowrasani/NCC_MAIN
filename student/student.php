@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         /* Basic CSS for layout */
         body {
@@ -11,12 +13,14 @@
         }
 
         #header {
-            background-color: #333;
+            background-color: #2D3092;
             color: #fff;
             padding: 0px;
             text-align: center;
             display: flex; 
             align-items: center; 
+            position:relative;
+            height:80px;
         }
 
         #menu-button {
@@ -32,7 +36,8 @@
             color: #333;
             border: none;
             padding: 10px 20px;
-            margin-left: 550px;
+           right:10px;
+           position:absolute;
             border-radius: 50%;
             cursor: pointer;
             font-size: 24px; /* Adjust the font size as needed */
@@ -147,9 +152,10 @@
         h2
         {
             
-            margin-left: 600px;
+            margin:0 auto;
             font-size: 30px;
             text-align: center;
+            
         }
         #menu a:hover {
             background-color: #007bff;
@@ -230,7 +236,7 @@ if (isset($_SESSION['uname'])) {
 
         <h1 id="dashboard-text">Dashboard</h1>
         <h2>CADET</h2>
-        <h4>Home</h4>
+        <h4 style="right:100px; position:absolute;">Home</h4>
         <div id="profile-button" onclick="toggleProfileDetails()"><img src="profileicon.jpeg" style="width: 30px; height: 30px;"></img></div>
         <div id="profile-details">
             <p>Name: <?php echo $studentName; ?></p>
