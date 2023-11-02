@@ -160,10 +160,8 @@
         #dashboard {
             display: none;
         }
-        
     </style>
     <script src="preventBack.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 <?php
@@ -230,8 +228,7 @@ if (isset($_SESSION['uname'])) {
 
         <h1 id="dashboard-text">Dashboard</h1>
         <h2>CADET</h2>
-        <h4>Home</h4>
-        <div id="profile-button" onclick="toggleProfileDetails()"><img src="profileicon.jpeg" style="width: 30px; height: 30px;"></img></div>
+        <div id="profile-button" onclick="toggleProfileDetails()">👤</div>
         <div id="profile-details">
             <p>Name: <?php echo $studentName; ?></p>
             <p>Regimental number <?php echo $username; ?></p>
@@ -274,17 +271,14 @@ if (isset($_SESSION['uname'])) {
             var menu = document.getElementById('menu');
             var dashboard = document.getElementById('dashboard');
                 dashboard.style.display = 'block';
-                menu.innerHTML = '<ul style="list-style-type:none;">' +
-                '<li style="display: flex; align-items: center;"><i class="fas fa-calendar-alt" style="margin-right: 10px;"></i><a href="#camp" onclick="showContent(\'SCHEDULE\')">VIEW SCHEDULE</a></li>' +
-                '<li style="display: flex; align-items: center;"><i class="fas fa-calendar" style="margin-right: 10px;"></i><a href="#events" onclick="showContent(\'EVENTS\')">VIEW EVENTS</a></li>' +
-                '<li style="display: flex; align-items: center;"><i class="fas fa-campground" style="margin-right: 10px;"></i><a href="#camps" onclick="showContent(\'CAMPS\')">VIEW CAMPS</a></li>' +
-                '<li style="display: flex; align-items: center;"><i class="fas fa-check-circle" style="margin-right: 10px;"></i><a href="#camps" onclick="showContent(\'R1CAMPS\')">REGISTERED CAMPS</a></li>' +
-
-                '<li style="display: flex; align-items: center;"><i class="fas fa-comments" style="margin-right: 10px;"></i><a href="#feedback" onclick="showContent(\'FEEDBACK\')"> FEEDBACK</a></li>' +
-
-                '<li style="display: flex; align-items: center;"><i class="fas fa-question-circle" style="margin-right: 10px;"></i><a href="#queries" onclick="showContent(\'QUERIES\')"> QUERIES</a></li>' +
-
-    '</ul>';
+                menu.innerHTML = '<ul style="list-style-type:disc;">' +
+                    '<li><a href="#camp" onclick="showContent(\'SCHEDULE\')">VIEW SCHEDULE</a></li>' +
+                    '<li><a href="#leave" onclick="showContent(\'EVENTS\')">VIEW EVENTS</a></li>' +
+                    '<li><a href="#training" onclick="showContent(\'CAMPS\')">VIEW CAMPS</a></li>' +
+                    '<li><a href="#reg" onclick="showContent(\'R1CAMPS\')">REGISTERED CAMPS</a></li>' +
+                    '<li><a href="#queries" onclick="showContent(\'FEEDBACK\')">FEEDBACK</a></li>' +
+                    '<li><a href="#profile" onclick="showContent(\'QUERIES\')">QUERIES</a></li>' +
+                    '</ul>';
     
         // JavaScript function to show content for the selected link
         function showContent(content) {
