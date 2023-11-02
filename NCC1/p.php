@@ -20,6 +20,8 @@
             align-items: center; 
             background-color: #e2a33b;
 background-image: linear-gradient(90deg, #e2a33b 0%, #ed742d 100%);
+position:fixed;
+
 
 
 
@@ -116,12 +118,14 @@ background-image: linear-gradient(90deg, #e2a33b 0%, #ed742d 100%);
         #menu {
             background-color: #eee;
             width: 20%;
-            padding: 20px;
+            padding-top: 80px;
+            padding-left:10px;
         }
 
         #content {
             width: 80%;
-            padding: 20px;
+            padding: 95px;
+           
         }
 
         #footer {

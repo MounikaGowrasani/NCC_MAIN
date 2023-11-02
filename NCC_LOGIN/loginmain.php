@@ -9,6 +9,33 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+body::before {
+    content: "";
+    background-image: url('ncc.jpg'); 
+    background-size: cover;
+    filter: blur(2px); 
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+        .card {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
@@ -16,39 +43,38 @@
             color: #333;
         }
 
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
         }
 
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
+        .input-icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #333;
         }
 
-        input[type="text"],
-        input[type="password"] {
-            width: 80%;
+        .input-field {
+            width: calc(100% - 30px);
             padding: 10px;
-            margin-bottom: 10px;
+            padding-left: 30px;
             border: 1px solid #ccc;
-            border-radius: 3px;
+            border-radius: 25px;
+            outline: none;
         }
 
         input[type="submit"] {
-            width: 50%;
+            width: 60%;
             padding: 10px;
             margin-left: 60px;
             background-color: #333;
             color: #fff;
             border: none;
-            border-radius: 3px;
+            border-radius: 25px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         input[type="submit"]:hover {
@@ -57,13 +83,19 @@
     </style>
 </head>
 <body>
-    <h1>Login Page</h1>
-    <form action="admin.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="uname" id="uname" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" name="pass" id="pass" required><br><br>
-        <input type="submit" name="submit" value="Submit">
-    </form>
+    <div class="card">
+        <h1>Login Page</h1>
+        <form action="admin.php" method="post">
+            <div class="input-container">
+                <i class="input-icon">✉️</i>
+                <input class="input-field" type="text" name="uname" id="uname" placeholder="Email" required>
+            </div>
+            <div class="input-container">
+                <i class="input-icon">🔒</i>
+                <input class="input-field" type="password" name="pass" id="pass" placeholder="Password" required>
+            </div>
+            <center><input type="submit" name="submit" value="Submit"></center>
+        </form>
+    </div>
 </body>
 </html>
