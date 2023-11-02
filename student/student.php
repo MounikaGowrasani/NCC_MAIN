@@ -4,7 +4,6 @@
     <title>Dashboard</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Basic CSS for layout */
         body {
@@ -167,8 +166,10 @@
         #dashboard {
             display: none;
         }
+        
     </style>
     <script src="preventBack.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 <?php
@@ -233,9 +234,9 @@ if (isset($_SESSION['uname'])) {
 ?>
     <div id="header">
 
-        <h1 id="dashboard-text">Dashboard</h1>
+        <h1 id="dashboard-text">DashboarERTYUd</h1>
         <h2>CADET</h2>
-        <h4 style="right:100px; position:absolute;">Home</h4>
+        <h4 style="right:100px; position:absolute; border-bottom: 2px solid #00AEEF;  border-top: 2px solid #EF1C25;cursor:pointer;padding: 5px;">Home</h4>
         <div id="profile-button" onclick="toggleProfileDetails()"><img src="profileicon.jpeg" style="width: 30px; height: 30px;"></img></div>
         <div id="profile-details">
             <p>Name: <?php echo $studentName; ?></p>
@@ -279,7 +280,7 @@ if (isset($_SESSION['uname'])) {
             var menu = document.getElementById('menu');
             var dashboard = document.getElementById('dashboard');
                 dashboard.style.display = 'block';
-                menu.innerHTML = '<ul style="list-style-type:none;">' +
+                menu.innerHTML = '<H2 style="text-decoration:underline;">Dashboard</h2>'+'<ul style="list-style-type:none;">' +
                 '<li style="display: flex; align-items: center;"><i class="fas fa-calendar-alt" style="margin-right: 10px;"></i><a href="#camp" onclick="showContent(\'SCHEDULE\')">VIEW SCHEDULE</a></li>' +
                 '<li style="display: flex; align-items: center;"><i class="fas fa-calendar" style="margin-right: 10px;"></i><a href="#events" onclick="showContent(\'EVENTS\')">VIEW EVENTS</a></li>' +
                 '<li style="display: flex; align-items: center;"><i class="fas fa-campground" style="margin-right: 10px;"></i><a href="#camps" onclick="showContent(\'CAMPS\')">VIEW CAMPS</a></li>' +
