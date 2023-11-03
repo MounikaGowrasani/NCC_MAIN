@@ -12,6 +12,7 @@
             padding: 0;
         }
 
+        
         #header {
             background-color: #2D3092;
             color: #fff;
@@ -123,7 +124,7 @@
             padding: 20px;
         }
 
-        #footer {
+        #footer1 {
             clear: both;
             background-color: #333;
             color: #fff;
@@ -166,6 +167,7 @@
         #dashboard {
             display: none;
         }
+       
         
     </style>
     <script src="preventBack.js"></script>
@@ -234,9 +236,11 @@ if (isset($_SESSION['uname'])) {
 ?>
     <div id="header">
 
-        <h1 id="dashboard-text">DashboarERTYUd</h1>
-        <h2>CADET</h2>
-        <h4 style="right:100px; position:absolute; border-bottom: 2px solid #00AEEF;  border-top: 2px solid #EF1C25;cursor:pointer;padding: 5px;">Home</h4>
+        <img src="ncclogo-removebg-preview.png" style="width=100px;height:80px;margin-left:20px;"></img><br><div  id="ncch"><b style="color:#00aeef; ">राष्ट्रीय कैडेट कोर</b><br>
+<b style="margin-left:10px; color:#ffcb06;">National Cadet Corps</b></div>
+
+        <h2 style="margin-left:470px;">CADET</h2>
+        <h4 style="right:100px; position:absolute; border-bottom: 2px solid #00AEEF;  border-top: 2px solid #EF1C25;cursor:pointer;padding: 5px;"><a href="\NCC_MAIN\ncc\h.html" style="color:#fff;text-decoration: none;">Home</a></h4>
         <div id="profile-button" onclick="toggleProfileDetails()"><img src="profileicon.jpeg" style="width: 30px; height: 30px;"></img></div>
         <div id="profile-details">
             <p>Name: <?php echo $studentName; ?></p>
@@ -272,7 +276,7 @@ if (isset($_SESSION['uname'])) {
         </div>
     </div>
 
-    <div id="footer">
+    <div id="footer1">
         &copy; 2023 Vignan University
     </div>
 
@@ -280,7 +284,7 @@ if (isset($_SESSION['uname'])) {
             var menu = document.getElementById('menu');
             var dashboard = document.getElementById('dashboard');
                 dashboard.style.display = 'block';
-                menu.innerHTML = '<H2 style="text-decoration:underline;">Dashboard</h2>'+'<ul style="list-style-type:none;">' +
+                menu.innerHTML = '<ul style="list-style-type:none;">' +'<li style="border-bottom: 2px solid #00AEEF;  border-top: 2px solid #EF1C25;cursor:pointer;"><h2>Dashboard</h2></li>'+
                 '<li style="display: flex; align-items: center;"><i class="fas fa-calendar-alt" style="margin-right: 10px;"></i><a href="#camp" onclick="showContent(\'SCHEDULE\')">VIEW SCHEDULE</a></li>' +
                 '<li style="display: flex; align-items: center;"><i class="fas fa-calendar" style="margin-right: 10px;"></i><a href="#events" onclick="showContent(\'EVENTS\')">VIEW EVENTS</a></li>' +
                 '<li style="display: flex; align-items: center;"><i class="fas fa-campground" style="margin-right: 10px;"></i><a href="#camps" onclick="showContent(\'CAMPS\')">VIEW CAMPS</a></li>' +
