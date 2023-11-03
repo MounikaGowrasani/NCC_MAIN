@@ -234,9 +234,41 @@ if (isset($_SESSION['uname'])) {
         }
     }
 ?>
-    <div id="header">
-
-        <img src="ncclogo-removebg-preview.png" style="width=100px;height:80px;margin-left:20px;"></img><br><div  id="ncch"><b style="color:#00aeef; ">राष्ट्रीय कैडेट कोर</b><br>
+ <div class="accolades" style=" width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;">
+        <div class="inner-accolades"  style=" width: 1300px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;">
+          <img
+            class="vignan-logo" style="width: 250px;
+    height: 100%;"
+            src="https://vignan.ac.in/images/LOGO_change.jpg"
+            alt=""
+          />
+          <div class="vignan-name" style=" font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #4d4d4d;">
+            <div>विज्ञान शास्त्र प्रौद्योगिकी और परिशोधन संगठन</div>
+            <div>విజ్ఞాన శాస్త్ర సాంకేతిక పరిశోధనా సంస్థ</div>
+          </div>
+          <img
+            class="vignan-accolades" style="width: 310px;
+    height: 100%;"
+            src="https://vignan.ac.in/images/accloads.png"
+            alt=""
+          />
+        </div>
+      </div>
+<div id="header">
+    <img src="ncclogo-removebg-preview.png" style="width=100px;height:80px;margin-left:20px;"></img><br><div  id="ncch"><b style="color:#00aeef; ">राष्ट्रीय कैडेट कोर</b><br>
 <b style="margin-left:10px; color:#ffcb06;">National Cadet Corps</b></div>
 
         <h2 style="margin-left:470px;">CADET</h2>
@@ -393,6 +425,8 @@ function closePasswordForm() {
 
     </script>
     <script src="preventBack.js"></script>
+  
+
 </body>
 
 </html>
