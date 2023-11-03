@@ -20,8 +20,6 @@
             align-items: center; 
             background-color: #e2a33b;
 background-image: linear-gradient(90deg, #e2a33b 0%, #ed742d 100%);
-position:fixed;
-
 
 
 
@@ -118,14 +116,12 @@ position:fixed;
         #menu {
             background-color: #eee;
             width: 20%;
-            padding-top: 80px;
-            padding-left:10px;
+            padding: 20px;
         }
 
         #content {
             width: 80%;
-            padding: 95px;
-           
+            padding: 20px;
         }
 
         #footer {
@@ -135,7 +131,10 @@ position:fixed;
             text-align: center;
             padding: 10px;
         }
-
+iframe{
+    border:none;
+    
+}
         /* Style links in the menu */
         #menu ul {
             list-style-type: none;
