@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
     <style>
         /* Basic CSS for layout */
         body {
@@ -12,7 +14,9 @@
             margin: 0;
             padding: 0;
         }
-
+        
+      
+    
         
         #header {
             background-color: #2D3092;
@@ -168,11 +172,13 @@
         #dashboard {
             display: none;
         }
-       
+        
+
         
     </style>
     <script src="preventBack.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body>
 <?php
@@ -307,17 +313,200 @@ if (isset($_SESSION['uname'])) {
                 <img src="10.jpeg" alt="image" height="500px" width="1000px">
             </div>
         </div>
-    </div>
+    </div><br><br>
 
-    <div id="footer1">
-        &copy; 2023 Vignan University
+ <!-- ======= Frequently Asked Questioins Section ======= -->
+ <center><h2> Frequently Asked Questions</h2></center><br><br>
+<div class="four" style="display:flex;">
+ <div class="wrapper" style="max-width:600px; padding:0 20px;">
+    <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
+        <input type="radio" name="tab" class="tab-radio" id="tab-1" style="display:none;">
+        <label for="tab-1" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 1</span>
+            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
+        </label>
+        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
+            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+        </div>
     </div>
+  </div>
+  
+  <div class="wrapper" style="max-width:600px; padding:0 20px;">
+    <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
+        <input type="radio" name="tab" class="tab-radio" id="tab-2" style="display:none;">
+        <label for="tab-2" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 2</span>
+            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
+        </label>
+        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
+            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+        </div>
+    </div>
+</div>
+  <div class="wrapper" style="max-width:600px; padding:0 20px;">
+  <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
+        <input type="radio" name="tab" class="tab-radio" id="tab-3" style="display:none;">
+        <label for="tab-3" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 3</span>
+            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
+        </label>
+        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
+            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+        </div>
+    </div>
+</div>
+<div class="wrapper" style="max-width:600px; padding:0 20px;">
+  <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
+        <input type="radio" name="tab" class="tab-radio" id="tab-4" style="display:none;">
+        <label for="tab-4" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 4</span>
+            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
+        </label>
+        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
+            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="four" style="display:flex">
+<div class="wrapper" style="max-width:600px; padding:0 20px; ">
+    <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
+        <input type="radio" name="tab" class="tab-radio" id="tab-5" style="display:none;">
+        <label for="tab-5" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 5</span>
+            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
+        </label>
+        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
+            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+        </div>
+    </div>
+  </div>
+  
 
+  <div class="wrapper" style="max-width:600px; padding:0 20px;">
+  <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
+        <input type="radio" name="tab" class="tab-radio" id="tab-6" style="display:none;">
+        <label for="tab-6" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 6</span>
+            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
+        </label>
+        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
+            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+        </div>
+    </div>
+</div>
+<div class="wrapper" style="max-width:600px; padding:0 20px;">
+  <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
+        <input type="radio" name="tab" class="tab-radio" id="tab-7" style="display:none;">
+        <label for="tab-7" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 7</span>
+            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
+        </label>
+        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
+            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+        </div>
+    </div>
+</div>
+<div class="wrapper" style="max-width:600px; padding:0 20px;">
+  <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
+        <input type="radio" name="tab" class="tab-radio" id="tab-8" style="display:none;">
+        <label for="tab-8" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 8</span>
+            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
+        </label>
+        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
+            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+        </div>
+    </div>
+</div>
+</div>  
+</div>
+
+
+
+    <div class="footer2" style="    height: 100px;
+    background-color: rgb(206, 0, 0);
+    color: white;
+    text-align: center;
+    display: flex;
+    margin-top: 10px;
+    padding:0px;
+    margin:0px;">
+  <img  class="left" src="bulb1.png" style="margin-top :18px; 
+    height: 65px;
+    width: 65px;
+    margin-left: 150px; 
+    background-color:rgb(223, 8, 8) ;
+    background: transparent;" />
+  <h1 class="text" style="margin-top: 15px;
+    text-align: center;
+    margin-left: 130px;
+    margin-right: 20px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    "><center>RIGHT PLACE FOR CREATIVE MINDS...<br>
+    Welcome to a place with 45-year legacy of Academic Excellence. As you explore, you begin to<br>
+    find yourself in a well diversed and intellectually intriguing atmosphere</center></h1>
+  <button class ="right" style="margin-top :30px; 
+    height: 35px;
+    width: 100px;
+    margin-left:110px;
+    color: #fff;
+    background-color:rgb(41, 41, 121);
+    border-color:rgb(41, 41, 121);
+   border-radius: 10px;"><a href="https://vignan.ac.in/"><h5 style="color:#fff; margin-top:10px;">Explore Vignan</h5></button></a>
+</div>
+    
+ <!-- Footer Starts -->
+ <div style="width: 100%; height: 26vh; display: flex; justify-content: center; align-items: center; background-color: #2D3092; color: #fff;">
+  <!-- Footer Container -->
+  <div class="footer" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+    <!-- Social Links -->
+    <div class="social-links mt-3" style="text-align: center;">
+      <a href="#" class="facebook"   style="background-color: #1877f2; color: #fff; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin: 10px; transition: transform 0.2s; text-decoration:none;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <i class="fab fa-facebook" style="font-size: 20px;"></i>
+      </a>
+      <a href="#" class="whatsapp"  style="background-color: #25d366; color: #fff; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin: 10px; transition: transform 0.2s; text-decoration:none;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <i class="fab fa-whatsapp" style="font-size: 20px;"></i>
+      </a>
+      <a href="#" class="instagram" style="background-color: #e4405f; color: #fff; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin: 10px; transition: transform 0.2s; text-decoration: none;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  <i class="fab fa-instagram" style="font-size: 20px;"></i>
+</a>
+<a href="#" class="twitter" style="background-color: #1da1f2; color: #fff; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin: 10px; transition: transform 0.2s; text-decoration: none;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  <i class="fab fa-twitter" style="font-size: 20px;"></i>
+</a>
+<a href="#" class="linkedin" style="background-color: #0077b5; color: #fff; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin: 10px; transition: transform 0.2s; text-decoration: none;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  <i class="fab fa-linkedin" style="font-size: 20px;"></i>
+</a>
+
+    </div>
+    <p style="text-align: center; margin: 10px; ">
+      Vignan's Foundation for Science, Technology and Research (Deemed to be University), Vadlamudi, Guntur-522213
+    </p>
+    <!-- Additional Contact Info -->
+    <div class="contact-info mt-3" style="text-align: center;">
+      <div class="email" style="color: #fff; padding: 10px; border-radius: 10px; margin: 5px;">
+        <i class="fas fa-envelope" style="font-size: 20px; "></i> Email: admissions@vignan.ac.in
+      </div>
+      <div class="phone" style="color: #fff; padding: 10px; border-radius: 10px; margin: 5px;">
+        <i class="fas fa-phone" style="font-size: 20px;"></i> Phone: 7799 427 427
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer1">
+        &copy; Copyright VFSTR 2022. All Rights Reserved
+    </div>
+    
+          
     <script>
             var menu = document.getElementById('menu');
             var dashboard = document.getElementById('dashboard');
                 dashboard.style.display = 'block';
-                menu.innerHTML = '<ul style="list-style-type:none;">' +'<li style="border-bottom: 2px solid #00AEEF;  border-top: 2px solid #EF1C25;cursor:pointer;"><h2>Dashboard</h2></li>'+
+                menu.innerHTML = '<ul style="list-style-type:none;">' +'<li style="cursor:pointer;"><h2>Dashboard</h2></li>'+
                 '<li style="display: flex; align-items: center;"><i class="fas fa-calendar-alt" style="margin-right: 10px;"></i><a href="#camp" onclick="showContent(\'SCHEDULE\')">VIEW SCHEDULE</a></li>' +
                 '<li style="display: flex; align-items: center;"><i class="fas fa-calendar" style="margin-right: 10px;"></i><a href="#events" onclick="showContent(\'EVENTS\')">VIEW EVENTS</a></li>' +
                 '<li style="display: flex; align-items: center;"><i class="fas fa-campground" style="margin-right: 10px;"></i><a href="#camps" onclick="showContent(\'CAMPS\')">VIEW CAMPS</a></li>' +
@@ -423,6 +612,36 @@ function closePasswordForm() {
     modal.style.display = "none";
 }
 
+  //JavaScript to apply styles when the input is checked
+ /*var tabs = document.querySelectorAll("[id^='tab-']");
+    tabs.forEach(function(tab) {
+        tab.addEventListener("change", function () {
+            var content = tab.parentElement.querySelector(".content");
+           if (tab.checked) {
+                content.style.maxHeight = "100vh";
+            } else {
+               content.style.maxHeight = "0px";
+            }
+       });
+});*/
+   var tabRadios = document.querySelectorAll(".tab-radio");
+        var tabContents = document.querySelectorAll(".content");
+       
+
+        tabRadios.forEach(function(tabRadio, index) {
+            tabRadio.addEventListener("change", function () {
+                tabContents.forEach(function(content, contentIndex) {
+                    if (contentIndex === index) {
+                        content.style.maxHeight = "100vh";
+                        
+                        
+                    } else {
+                        content.style.maxHeight = "0px";
+                       
+                    }
+                });
+            });
+        });
 
     </script>
     <script src="preventBack.js"></script>
