@@ -268,6 +268,7 @@ if (isset($_SESSION['uname']))
     '<li style="display: flex; align-items: center;"><i class="fas fa-calendar-plus" style="margin-right: 10px;"></i><a href="#leave" onclick="showContent(\'EVENTS\')">ADD EVENTS</a></li>' +
     '<li style="display: flex; align-items: center;"><i class="fas fa-campground" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'CAMPS\')">ADD CAMPS</a></li>' +
     '<li style="display: flex; align-items: center;"><i class="fas fa-list" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'VCAMPS\')">VIEW CAMPS</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-list" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'RCAMPS\')">REGISTERED CAMPS</a></li>' +
     '<li style="display: flex; align-items: center;"><i class="fas fa-users" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'RegCAMPS\')">CAMP STUDENTS</a></li>' +
     '<li style="display: flex; align-items: center;"><i class="fas fa-user-graduate" style="margin-right: 10px;"></i><a href="http://192.168.10.10/stuCurStatusSectionReg21.jsp" onclick="showContent(\'CADET DETAILS\')">CADET INFORMATION</a></li>' +
     '<li style="display: flex; align-items: center;"><i class="fas fa-comments" style="margin-right: 10px;"></i><a href="#feedback.html" onclick="showContent(\'FEEDBACK\')">VIEW FEEDBACK</a></li>' +
