@@ -3,7 +3,6 @@
 <head>
     <title>Dashboard</title>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
 
@@ -166,6 +165,7 @@
         #menu a:hover {
             background-color: #007bff;
             color: #fff;
+            border-radius:10px;
         }
 
         /* Hide the dashboard by default */
@@ -275,10 +275,11 @@ if (isset($_SESSION['uname'])) {
         </div>
       </div>
 <div id="header">
+    
     <img src="ncclogo-removebg-preview.png" style="width=100px;height:80px;margin-left:20px;"></img><br><div  id="ncch"><b style="color:#00aeef; ">राष्ट्रीय कैडेट कोर</b><br>
 <b style="margin-left:10px; color:#ffcb06;">National Cadet Corps</b></div>
 
-        <h2 style="margin-left:470px;">CADET</h2>
+       <h2 style="text-align:center;">CADET</h2>
         <h4 style="right:100px; position:absolute; border-bottom: 2px solid #00AEEF;  border-top: 2px solid #EF1C25;cursor:pointer;padding: 5px;"><a href="\NCC_MAIN\ncc\h.html" style="color:#fff;text-decoration: none;">Home</a></h4>
         <div id="profile-button" onclick="toggleProfileDetails()"><img src="profileicon.jpeg" style="width: 30px; height: 30px;"></img></div>
         <div id="profile-details">
@@ -315,18 +316,31 @@ if (isset($_SESSION['uname'])) {
         </div>
     </div><br><br>
 
+<br><br>
+    <!-- Ranks -->
+    <center><h2>Ranks in NCC</h2><center>
+        <div class="ranks" style="display:flex;  justify-content: center;align-items: center;margin: 0;">
+        <div><img src="rank1.png"></img><br><br><p>Cadet Senior Under Officer</p></div>
+        <div><img src="rank2.png"></img><br><br><p>Cadet Under Officer</p></div>
+        <div><img src="rank3.png"></img><br><br><p>Company Quarter Master Sergeant</p></div>
+        <div><img src="rank6.png"></img><br><br><p>Sergeant</p></div>
+        <div><img src="rank4.png"></img><br><br><p>Corporal</p></div>
+        <div><img src="rank5.png"></img><br><br><p>Lance Corporal</p></div>
+</div>
+<center><h3>All others who joined in NCC are called as Cadets</h3><center>
+<br><br><br><br>
  <!-- ======= Frequently Asked Questioins Section ======= -->
  <center><h2> Frequently Asked Questions</h2></center><br><br>
-<div class="four" style="display:flex;">
+<div class="two" style="display:flex; justify-content: center;align-items: center;margin: 0;">
  <div class="wrapper" style="max-width:600px; padding:0 20px;">
     <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
         <input type="radio" name="tab" class="tab-radio" id="tab-1" style="display:none;">
         <label for="tab-1" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 1</span>
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">What is National Cadet Corps ?</span>
             <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
         </label>
         <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+            <p style="font-size:16px; padding:15px 20px;">The National Cadet Corps (NCC) is a youth development movement. It has enormous potential for nation building. The NCC provides opportunities to the youth of the country for their all-round development with a sense of Duty, Commitment, Dedication, Discipline and Moral Values so that they become able leaders and useful citizens. The NCC provides exposure to the cadets in a wide range of activities., with a distinct emphasis on Social Services, Discipline and Adventure Training. The NCC is open to all regular students of schools and colleges on a voluntary basis. The students have no liability for active military service.</p>
         </div>
     </div>
   </div>
@@ -335,23 +349,27 @@ if (isset($_SESSION['uname'])) {
     <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
         <input type="radio" name="tab" class="tab-radio" id="tab-2" style="display:none;">
         <label for="tab-2" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 2</span>
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">When did National Cadet Corps Come into existence?</span>
             <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
         </label>
         <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+            <p style="font-size:16px; padding:15px 20px;">The National Cadets Corps came into existence under the National Cadet Corps Act XXXI of 1948 (passed in April, 1948; came into existence on 16th July, 1948).</p>
         </div>
     </div>
 </div>
+</div>
+<div class="two" style="display:flex; justify-content: center;align-items: center;margin: 0;">
   <div class="wrapper" style="max-width:600px; padding:0 20px;">
   <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
         <input type="radio" name="tab" class="tab-radio" id="tab-3" style="display:none;">
         <label for="tab-3" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 3</span>
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">What is/are the Aim(s) of NCC?</span>
             <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
         </label>
         <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+            <p style="font-size:16px; padding:15px 20px;">To develop character, commandership, discipline , leadership, secular outlook , sprit of adventure and the ideals of selfless service amongst the youth of the country.
+To create a human resource of organized, trained and motivate youth to provide leadership in all walks of life and always available for the service of the nation .
+To provide a suitable environment to motivate the youth to take up a career in the Armed Forces.</p>
         </div>
     </div>
 </div>
@@ -359,26 +377,26 @@ if (isset($_SESSION['uname'])) {
   <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
         <input type="radio" name="tab" class="tab-radio" id="tab-4" style="display:none;">
         <label for="tab-4" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 4</span>
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">What is the Motto of NCC?</span>
             <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
         </label>
         <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+            <p style="font-size:16px; padding:15px 20px;min-width:650px;">The motto of NCC is:“ UNITY AND DISCIPLINE”.</p>
         </div>
     </div>
 </div>
 </div>
 </div>
-<div class="four" style="display:flex">
+<div class="two" style="display:flex; justify-content: center;align-items: center;margin: 0;">
 <div class="wrapper" style="max-width:600px; padding:0 20px; ">
     <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
         <input type="radio" name="tab" class="tab-radio" id="tab-5" style="display:none;">
         <label for="tab-5" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 5</span>
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">What is the NCC symbol/insignia?</span>
             <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
         </label>
         <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+            <p style="font-size:16px; padding:15px 20px;">It is the NCC Crest in gold in the middle, with the letters “NCC”; encircled by a wreath of seventeen lotus with a background in Red, Blue and Light blue.</p>
         </div>
     </div>
   </div>
@@ -388,23 +406,26 @@ if (isset($_SESSION['uname'])) {
   <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
         <input type="radio" name="tab" class="tab-radio" id="tab-6" style="display:none;">
         <label for="tab-6" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 6</span>
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">What is a NCC Group?</span>
             <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
         </label>
         <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+            <p style="font-size:16px; padding:15px 20px;">The Directorates are further sub-divided into Groups, which varies according to the size of the state, each under the command of an Officer equivalent to the rank of Colonel (being upgraded to the rank of Brigadier). In all, there are 95 Group HQ’s in the country.</p>
         </div>
     </div>
 </div>
+</div>
+<div class="two" style="display:flex; justify-content: center;align-items: center;margin: 0;">
 <div class="wrapper" style="max-width:600px; padding:0 20px;">
   <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
         <input type="radio" name="tab" class="tab-radio" id="tab-7" style="display:none;">
         <label for="tab-7" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 7</span>
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">Who is responsible for the conduct of NCC activities in an institution?
+</span>
             <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
         </label>
         <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+            <p style="font-size:16px; padding:15px 20px;">The ANO. He is in control of the cadets and is responsible to plan and organize training with the assistance of the Permanent Instructional (PI) staff, detailed by the NCC unit.</p>
         </div>
     </div>
 </div>
@@ -412,18 +433,20 @@ if (isset($_SESSION['uname'])) {
   <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
         <input type="radio" name="tab" class="tab-radio" id="tab-8" style="display:none;">
         <label for="tab-8" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">question 8</span>
+            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">What is a NCC Troop?
+</span>
             <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
         </label>
         <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum corrupti recusandae nulla. Officiis nam, beatae dolorum quos reprehenderit, sint at numquam quaerat, nobis molestias fugit necessitatibus rem soluta iure corrupti.</p>
+            <p style="font-size:16px; padding:15px 20px;min-width:550px;">The basic functional sub-unit in schools, having JW/JD Cadets, is a Troop.</p>
         </div>
     </div>
 </div>
 </div>  
 </div>
-
-
+</div>
+<br>
+<br>
 
     <div class="footer2" style="    height: 100px;
     background-color: rgb(206, 0, 0);
