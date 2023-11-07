@@ -78,7 +78,7 @@
 
 }
 .carousel {
-    max-width: 1000px;
+  width:100%;
     margin: 20px auto;
     position: relative;
     overflow: hidden;
@@ -111,6 +111,7 @@
 }
 .slide4 {
     background-image: url('slide3.jpg');
+    min-width:1000px;
 }
 
 
@@ -206,13 +207,20 @@
     flex-direction: row;
     
 }
+
 .img1{
-    width:150px;
-    padding-top: 100px;
-    height:250px;
+   
+    padding-top: 180px;
     padding-right: 40px;
     padding-left: 40px;
+
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+    border-radius: 28%; /* Creates a circular shape */
+    overflow: hidden; 
+   
 }
+
 .img2{
     width:150px;
     padding-top: 100px;
