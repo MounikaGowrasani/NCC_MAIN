@@ -279,7 +279,7 @@ if (isset($_SESSION['uname'])) {
     <img src="ncclogo-removebg-preview.png" style="width=100px;height:80px;margin-left:20px;"></img><br><div  id="ncch"><b style="color:#00aeef; ">राष्ट्रीय कैडेट कोर</b><br>
 <b style="margin-left:10px; color:#ffcb06;">National Cadet Corps</b></div>
 
-        <div><center><h2>CADET</h2></center></div>
+       <h2 style="text-align:center;">CADET</h2>
         <h4 style="right:100px; position:absolute; border-bottom: 2px solid #00AEEF;  border-top: 2px solid #EF1C25;cursor:pointer;padding: 5px;"><a href="\NCC_MAIN\ncc\h.html" style="color:#fff;text-decoration: none;">Home</a></h4>
         <div id="profile-button" onclick="toggleProfileDetails()"><img src="profileicon.jpeg" style="width: 30px; height: 30px;"></img></div>
         <div id="profile-details">
@@ -316,9 +316,22 @@ if (isset($_SESSION['uname'])) {
         </div>
     </div><br><br>
 
+<br><br>
+    <!-- Ranks -->
+    <center><h2>Ranks in NCC</h2><center>
+        <div class="ranks" style="display:flex;  justify-content: center;align-items: center;margin: 0;">
+        <div><img src="rank1.png"></img><br><br><p>Cadet Senior Under Officer</p></div>
+        <div><img src="rank2.png"></img><br><br><p>Cadet Under Officer</p></div>
+        <div><img src="rank3.png"></img><br><br><p>Company Quarter Master Sergeant</p></div>
+        <div><img src="rank6.png"></img><br><br><p>Sergeant</p></div>
+        <div><img src="rank4.png"></img><br><br><p>Corporal</p></div>
+        <div><img src="rank5.png"></img><br><br><p>Lance Corporal</p></div>
+</div>
+<center><h3>All others who joined in NCC are called as Cadets</h3><center>
+<br><br><br><br>
  <!-- ======= Frequently Asked Questioins Section ======= -->
  <center><h2> Frequently Asked Questions</h2></center><br><br>
-<div class="two" style="display:flex;">
+<div class="two" style="display:flex; justify-content: center;align-items: center;margin: 0;">
  <div class="wrapper" style="max-width:600px; padding:0 20px;">
     <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
         <input type="radio" name="tab" class="tab-radio" id="tab-1" style="display:none;">
@@ -345,7 +358,7 @@ if (isset($_SESSION['uname'])) {
     </div>
 </div>
 </div>
-<div class="two" style="display:flex;">
+<div class="two" style="display:flex; justify-content: center;align-items: center;margin: 0;">
   <div class="wrapper" style="max-width:600px; padding:0 20px;">
   <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
         <input type="radio" name="tab" class="tab-radio" id="tab-3" style="display:none;">
@@ -368,13 +381,13 @@ To provide a suitable environment to motivate the youth to take up a career in t
             <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
         </label>
         <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;min-width:1000px;">The motto of NCC is:“ UNITY AND DISCIPLINE”.</p>
+            <p style="font-size:16px; padding:15px 20px;min-width:650px;">The motto of NCC is:“ UNITY AND DISCIPLINE”.</p>
         </div>
     </div>
 </div>
 </div>
 </div>
-<div class="two" style="display:flex">
+<div class="two" style="display:flex; justify-content: center;align-items: center;margin: 0;">
 <div class="wrapper" style="max-width:600px; padding:0 20px; ">
     <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
         <input type="radio" name="tab" class="tab-radio" id="tab-5" style="display:none;">
@@ -402,7 +415,7 @@ To provide a suitable environment to motivate the youth to take up a career in t
     </div>
 </div>
 </div>
-<div class="two" style="display:flex">
+<div class="two" style="display:flex; justify-content: center;align-items: center;margin: 0;">
 <div class="wrapper" style="max-width:600px; padding:0 20px;">
   <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
         <input type="radio" name="tab" class="tab-radio" id="tab-7" style="display:none;">
@@ -425,7 +438,7 @@ To provide a suitable environment to motivate the youth to take up a career in t
             <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
         </label>
         <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;min-width:1000px;">The basic functional sub-unit in schools, having JW/JD Cadets, is a Troop.</p>
+            <p style="font-size:16px; padding:15px 20px;min-width:550px;">The basic functional sub-unit in schools, having JW/JD Cadets, is a Troop.</p>
         </div>
     </div>
 </div>
