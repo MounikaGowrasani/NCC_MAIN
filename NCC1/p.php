@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="./p.css"/>
+<style>
         /* Basic CSS for layout */
         body {
             font-family: Arial, sans-serif;
@@ -95,7 +95,7 @@ background-image: linear-gradient(90deg, #e2a33b 0%, #ed742d 100%);
     color: #f00;
 }
 #update-password-button,#logout-button {
-            background-color: #007bff;
+    background-color: rgb(255, 103, 15);
             color: #fff;
             border: none;
             padding: 10px 20px;

@@ -46,7 +46,7 @@ if(isset($_POST['submit']))
         }
     } else {
         // Username and password do not match
-        echo "Invalid username or password. Please try again.";
+        echo "<script>alert('Invalid username or password. Please try again.'); window.history.back();</script>";
     }
 
 }

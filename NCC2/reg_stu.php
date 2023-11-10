@@ -6,7 +6,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         /* Reset some default browser styles */
-        body, h1, h2, label {
+        body,h2, label {
             margin: 0;
             padding: 0;
         }
@@ -16,12 +16,6 @@
             background-color: #fff;
         }
 
-        h1 {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
 
         label {
             display: block;
@@ -77,7 +71,7 @@
     </style>
 </head>
 <body>
-<h1>Dashboard</h1>
+
 <div>
     <label for="campSelect">Select Camp ID:</label>
     <select id="campSelect" onchange="loadRegisteredStudents()">

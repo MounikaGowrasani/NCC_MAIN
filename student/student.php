@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+<title>Dashboard</title>
+<link rel="stylesheet" href="./p.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         /* Basic CSS for layout */
@@ -13,10 +13,6 @@
             margin: 0;
             padding: 0;
         }
-        
-      
-    
-        
         #header {
             background-color: #2D3092;
             color: #fff;
@@ -66,7 +62,7 @@
 
         #update-password-button,
         #logout-button {
-            background-color: #007bff;
+            background-color: rgb(255, 103, 15);
             color: #fff;
             border: none;
             padding: 10px 20px;

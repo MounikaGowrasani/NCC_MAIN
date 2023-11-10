@@ -4,7 +4,9 @@
 <html>
 <head>
     <title>Dashboard</title>
+    <link rel="stylesheet" href="./p.css"/>
     <style>
+        
         /* Basic CSS for layout */
         body {
             font-family: Arial, sans-serif;
@@ -92,7 +94,7 @@
 }
 
 #update-password-button,#logout-button {
-            background-color: #007bff;
+    background-color: rgb(255, 103, 15);
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -262,9 +264,13 @@ if (isset($_SESSION['uname']))
                 menu.innerHTML = '<ul style="list-style-type:disc;">' +
                     '<li><a href="#camp" onclick="showContent(\'SCHEDULE\')">SCHEDULE</a></li>'+
                     '<li><a href="#regment.html" onclick="showContent(\'REGMENT\')">ENROLLED STUDENTS</a></li>' +
-                    '<li><a href="#leave" onclick="showContent(\'EVENTS\')">EVENTS</a></li>' +
-                    '<li><a href="#training" onclick="showContent(\'CAMPS\')">CAMPS</a></li>' +
-                    '<li><a href="#train" onclick="showContent(\'REGISTERED CAMPS\')">REGISTERED CAMPS</a></li>' +
+                    '<li><a href="#leave" onclick="showContent(\'EVENTS\')">ADD EVENTS</a></li>' +
+                    '<li><a href="#training" onclick="showContent(\'VIEWEVENTS\')">VIEW EVENTS</a></li>' +
+
+                    '<li><a href="#training" onclick="showContent(\'CAMPS\')">ADD CAMPS</a></li>' +
+                    '<li style="display: flex; align-items: center;"><i class="fas fa-list" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'VCAMPS\')">VIEW CAMPS</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-list" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'RCAMPS\')">REGISTERED CAMPS</a></li>' +
+                  
                     '<li><a href="#training" onclick="showContent(\'RegCAMPS\')">Registered Students</a></li>' +
                     '<li><a href="http://192.168.10.10/stuCurStatusSectionReg21.jsp" onclick="showContent(\'CADET DETAILS\')">CADET INFORMATION</a></li>' +
                     '<li><a href="#queries" onclick="showContent(\'FEEDBACK\')">VIEW FEEDBACK</a></li>' +
@@ -279,9 +285,20 @@ if (isset($_SESSION['uname']))
         // Load events.html in an iframe
         contentDiv.innerHTML = '<iframe src="events.html" width="1000px" height="500px"></iframe>';
     } 
+    else if (content === 'VIEWEVENTS') {
+        contentDiv.innerHTML = '<iframe src="/NCC_MAIN/student/view_events3.php" width="1000px" height="500px"></iframe>';
+    } 
     else if(content === 'CAMPS')
     {
         contentDiv.innerHTML= '<iframe src="camps.html" width="1000px" height="500px"></iframe>';
+    }
+    else if(content === 'VCAMPS')
+    {
+        contentDiv.innerHTML= '<iframe src="/NCC_MAIN/NCC2/view_camps.php" width="1000px" height="500px"></iframe>';
+    }
+    else if(content === 'RCAMPS')
+    {
+        contentDiv.innerHTML= '<iframe src="/NCC_MAIN/NCC2/reg_stu.php" width="1000px" height="500px"></iframe>';
     }
     else if(content === 'SCHEDULE')
     {

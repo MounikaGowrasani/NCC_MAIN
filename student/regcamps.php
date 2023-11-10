@@ -37,13 +37,15 @@ if (isset($_SESSION['uname'])) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Display table header and form
         echo "<form action='upload_certificate.php' method='post' enctype='multipart/form-data'>";
-        echo "<table border='1'><tr><th>Serial No.</th><th>Camp ID</th><th>Camp Name</th><th>Upload/Download Certificate</th></tr>";
+        echo "<table border='1' style='width: 100%; border-collapse: collapse;'>";
+        echo "<tr style='background-color: #f2f2f2;'><th>Serial No.</th><th>Camp ID</th><th>Camp Name</th><th>Upload/Download Certificate</th></tr>";
         $serialNumber = 1;
-
+        $alternateColor = false;
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
+            $rowColor = $alternateColor ? '#cceeff' : '#99ccff';
+            $alternateColor = !$alternateColor;
             // Display campid, campname, and handle upload or download based on certificate status
             $campid = $row['campid'];
             $registerid=$row['registerid'];
@@ -53,25 +55,27 @@ if (isset($_SESSION['uname'])) {
             if ($certificateResult->num_rows > 0) {
                 $certificateExists = true;
             }
-            echo "<tr><td>".$serialNumber."</td><td>".$campid."</td><td>".$row['name']."</td><td>";
-
+            echo "<tr style='background-color: $rowColor;'>";
+            echo "<td>".$serialNumber."</td>";
+            echo "<td>".$campid."</td>";
+            echo "<td>".$row['name']."</td>";
+            echo "<td>";
             if (!$certificateExists) {
                 echo "<input type='hidden' name='registerid' value='$registerid'>";
-                echo "<a href='upload_certificate.php?registerid=$registerid'>Upload Certificate</a>";
-
+                echo "<a href='upload_certificate.php?registerid=$registerid' style='text-decoration: none; color: blue;'>Upload Certificate</a>";
             } else {
                 // If a certificate exists, display a link to download it
-                echo "<a href='download_certificate.php?registerid=$registerid' download>Download Certificate</a>";
-
+                echo "<a href='download_certificate.php?registerid=$registerid' download style='text-decoration: none; color: green;'>Download Certificate</a>";
             }
-
+        
             echo "</td></tr>";
             $serialNumber++;
         }
-
-        // Close the table
+        
+        // Close the table and form
         echo "</table>";
         echo "</form>";
+        
     } else {
         // If no record is found for the session username
         echo "No records found for the given username.";
@@ -83,3 +87,4 @@ if (isset($_SESSION['uname'])) {
     echo "Session error: 'uname' not set in the session.";
 }
 ?>
+
