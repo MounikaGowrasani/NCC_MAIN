@@ -88,13 +88,19 @@ body::before {
         <form action="admin.php" method="post">
             <div class="input-container">
                 <i class="input-icon">✉️</i>
-                <input class="input-field" type="text" name="uname" id="uname" placeholder="Email" required>
+                <input class="input-field" type="text" name="uname" id="uname" placeholder="  Enter username" required>
             </div>
             <div class="input-container">
                 <i class="input-icon">🔒</i>
-                <input class="input-field" type="password" name="pass" id="pass" placeholder="Password" required>
+                <input class="input-field" type="password" name="pass" id="pass" placeholder="  Password" required>
+<br>
+               
+                
             </div>
-            <center><input type="submit" name="submit" value="Submit"></center>
+            <a href="/NCC_MAIN/NCC_ENROLL/enroll.html" style="float: right;">Enroll here</a>
+<br>           
+          
+            <input type="submit" name="submit" value="Submit">
         </form>
     </div>
 </body>

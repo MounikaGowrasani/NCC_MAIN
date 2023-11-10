@@ -211,10 +211,10 @@ if (isset($_SESSION['uname']))
     <div id="header">
 
         <h1 id="dashboard-text">Dashboard</h1>
-        <h2>ADMIN</h2>
-        <h1>Welcome, <?php echo $username; ?>!</h1>
+        
+        <h2>Welcome <?php echo $username; ?>!</h2>
 
-        <div id="profile-button" onclick="toggleProfileDetails()">👤</div>
+        <div id="profile-button" onclick="toggleProfileDetails()"><img src="/NCC_MAIN/student/profile2.jpeg" style="width: 30px; height: 30px;right:0px;"></img></div>
         <div id="profile-details">
             <p>Name: <?php echo $username; ?></p>
             <p>Employee ID: 12345</p>
