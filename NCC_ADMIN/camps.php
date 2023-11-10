@@ -29,6 +29,9 @@ $totalExpenditure = ($dailyAllowance + $travelAllowance + $polAllowance) * $numb
 $currentYear = date("Y");
 $campId=$campName."@".$currentYear;
 // Insert data into the database
+$checkCampIdQuery = "SELECT * FROM camps WHERE campId='$campId'";
+$checkCampIdResult = $conn->query($checkCampIdQuery);
+
 if ($checkCampIdResult->num_rows > 0) {
     echo "<script>alert('Camp ID already exists!'); window.history.back();</script>";
 } else {
@@ -42,7 +45,6 @@ if ($checkCampIdResult->num_rows > 0) {
         echo "Error: " . $insertSql . "<br>" . $conn->error;
     }
 }
-
 
 // Close the database connection
 $conn->close();
