@@ -4,7 +4,8 @@
 <html>
 <head>
     <title>Dashboard</title>
-    <link rel="stylesheet" href="./p.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="./p.css"/>
     <style>
         
         /* Basic CSS for layout */
@@ -261,22 +262,21 @@ if (isset($_SESSION['uname']))
             var menu = document.getElementById('menu');
             var dashboard = document.getElementById('dashboard');
                 dashboard.style.display = 'block';
-                menu.innerHTML = '<ul style="list-style-type:disc;">' +
-                    '<li><a href="#camp" onclick="showContent(\'SCHEDULE\')">SCHEDULE</a></li>'+
-                    '<li><a href="#regment.html" onclick="showContent(\'REGMENT\')">ENROLLED STUDENTS</a></li>' +
-                    '<li><a href="#leave" onclick="showContent(\'EVENTS\')">ADD EVENTS</a></li>' +
-                    '<li><a href="#training" onclick="showContent(\'VIEWEVENTS\')">VIEW EVENTS</a></li>' +
+                menu.innerHTML = '<ul style="list-style-type: disc;">' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-calendar-alt" style="margin-right: 10px;"></i><a href="#camp" onclick="showContent(\'SCHEDULE\')"> SCHEDULE</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-users" style="margin-right: 10px;"></i><a href="#regment.html" onclick="showContent(\'REGMENT\')"> ENROLLED STUDENTS</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-plus-circle" style="margin-right: 10px;"></i><a href="#leave" onclick="showContent(\'EVENTS\')"> ADD EVENTS</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-eye" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'VIEWEVENTS\')"> VIEW EVENTS</a></li>' +
 
-                    '<li><a href="#training" onclick="showContent(\'CAMPS\')">ADD CAMPS</a></li>' +
-                    '<li style="display: flex; align-items: center;"><i class="fas fa-list" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'VCAMPS\')">VIEW CAMPS</a></li>' +
-    '<li style="display: flex; align-items: center;"><i class="fas fa-list" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'RCAMPS\')">REGISTERED CAMPS</a></li>' +
-                  
-                    '<li><a href="#training" onclick="showContent(\'RegCAMPS\')">Registered Students</a></li>' +
-                    '<li><a href="http://192.168.10.10/stuCurStatusSectionReg21.jsp" onclick="showContent(\'CADET DETAILS\')">CADET INFORMATION</a></li>' +
-                    '<li><a href="#queries" onclick="showContent(\'FEEDBACK\')">VIEW FEEDBACK</a></li>' +
-                    '<li><a href="#profile" onclick="showContent(\'QUERIES\')">VIEW QUERIES</a></li>' +
-                
-                    '</ul>';
+    '<li style="display: flex; align-items: center;"><i class="fas fa-database" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'CAMPS\')"> ADD CAMPS</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-eye" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'VCAMPS\')"> VIEW CAMPS</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-list" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'RCAMPS\')"> REGISTERED CAMPS</a></li>' +
+
+    '<li style="display: flex; align-items: center;"><i class="fas fa-users" style="margin-right: 10px;"></i><a href="#training" onclick="showContent(\'RegCAMPS\')"> REGISTERED STUDENTS</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-comments" style="margin-right: 10px;"></i><a href="#queries" onclick="showContent(\'FEEDBACK\')"> VIEW FEEDBACK</a></li>' +
+    '<li style="display: flex; align-items: center;"><i class="fas fa-question-circle" style="margin-right: 10px;"></i><a href="#profile" onclick="showContent(\'QUERIES\')"> VIEW QUERIES</a></li>' +
+
+    '</ul>';
     
         // JavaScript function to show content for the selected link
         function showContent(content) {
