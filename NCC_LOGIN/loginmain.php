@@ -37,6 +37,15 @@ body::before {
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
+        a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #555;
+        }
 
         h1 {
             text-align: center;
@@ -96,8 +105,8 @@ body::before {
 <br>
                
                 
-            </div>
-            <a href="/NCC_MAIN/NCC_ENROLL/enroll.html" style="float: right;">Enroll here</a>
+            </div >
+            <a href="/NCC_MAIN/NCC_ENROLL/enroll.html" style="float: right; color: #331;  transition: color 0.3s ease;">Enroll here</a>
 <br>           
           
             <input type="submit" name="submit" value="Submit">

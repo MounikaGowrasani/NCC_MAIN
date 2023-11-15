@@ -16,12 +16,14 @@
         }
 
         #header {
-            background-color: #333;
+            background-color: #e2a33b;
             color: #fff;
             padding: 0px;
             text-align: center;
             display: flex; 
             align-items: center; 
+            background-image: linear-gradient(90deg, #e2a33b 0%, #ed742d 100%);
+
         }
 
         #menu-button {
@@ -37,10 +39,13 @@
             color: #333;
             border: none;
             padding: 10px 20px;
-            margin-left: 550px;
+            margin-left: 500px;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 24px; /* Adjust the font size as needed */
+            font-size: 24px;
+            right:0; /* Adjust the font size as needed */
+            
+
         }
 
         #profile-details {
@@ -212,10 +217,10 @@ if (isset($_SESSION['uname']))
 
         <h1 id="dashboard-text">Dashboard</h1>
         
-        <h2>Welcome <?php echo $username; ?>!</h2>
+        <h2 style="margin-left:500px;">Welcome <?php echo $username; ?>!</h2>
 
-        <div id="profile-button" onclick="toggleProfileDetails()"><img src="/NCC_MAIN/student/profile2.jpeg" style="width: 30px; height: 30px;right:0px;"></img></div>
-        <div id="profile-details">
+<div id="profile-button" onclick="toggleProfileDetails()"><img src="/NCC_MAIN/student/profile2.jpeg" style="width: 30px; height: 30px;"></img></div>
+<div id="profile-details">
             <p>Name: <?php echo $username; ?></p>
             <p>Employee ID: 12345</p>
             <p>Phone no: 9876543210</p>
