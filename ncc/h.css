@@ -263,14 +263,14 @@
         text-align: justify;
         margin-top: 25px;
         font-size: 35px;
-        margin-left: auto;
+        margin-left: 50px;
         margin-right: auto;
         position: relative;
       font-size: 2em;
       margin-bottom: 1em;
       display: inline-block; /* Ensure the background covers the entire width */
       padding: 1em 2em;
-        background-color:rgb(228, 231, 234);
+        background-color:white;
         color: black;
         font-size: 20px;
         padding: 10px;
@@ -279,9 +279,9 @@
         
  }
  .three1{
-    background-color:rgb(59, 59, 136) ;
+    background-color:rgb(21, 186, 51) ;
     color: white;
-    width: 700px;
+    width: 400px;
     margin-right: 0px;
     padding-left: 70px;
     padding-top: 50px;
@@ -295,6 +295,7 @@
  }
 .span1{
     font-family: "Times New Roman", Times, serif;
+
 }    
 .obj{
     margin-right: 100px;
