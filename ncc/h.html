@@ -51,24 +51,29 @@
 
 <br>
 <div class="ncc">
-  <div class="container">
-    <video  autoplay loop muted plays-inline class="vvideo">
+  <div class="video-container">
+    <video  autoplay loop muted playsinline class="vvideo" >
       <source src="videoplayback.mp4" type="video/mp4">
      </video>   
-    <div class="overlay">
-            <label for="input" style="color:rgb(250, 250, 250);"><b>NATIONAL  CADET  CORPS</b></label>
-    </div>
-</div>
-</div>
-<br>
+     <div class="text-overlay active" id="text1">Text 1</div>
+     <div class="text-overlay" id="text2">Text 2</div>
+     <div class="text-overlay" id="text3">Text 3</div>
+     <div class="text-overlay" id="text4">Text 4</div>
 
+     <div class="overlay-bar bar-1" onclick="showText(1)">1</div>
+     <div class="overlay-bar bar-2" onclick="showText(2)">2</div>
+     <div class="overlay-bar bar-3" onclick="showText(3)">3</div>
+     <div class="overlay-bar bar-4" onclick="showText(4)">4</div>
+</div>
+</div>
+  <h1 style="margin-left:350px; margin-top: 30px;"><u><b style="font-family: Times New Roman, Times, serif;color:black;">NCC Overview</b></u></h1>
 
  
  
 <div class="Overview">
  <div class="objective">
-  <center><h1><u><b style=" position: fixed;font-family: Times New Roman, Times, serif;color:black;">NCC Overview</b></u></h1></center>
-  <span class="span1"><h4>OBJECTIVE:</h4></span>
+
+  <span class="span1"><h4 style="margin-top: 0px;">OBJECTIVE:</h4></span>
     
 
     <p class="obj">
@@ -95,7 +100,7 @@
     
 
     
-    <span class="span1"><h2>FORMATION:</h2></span>
+    <span class="span1"><h4>FORMATION:</h4></span>
     
     <p class="for">
 
@@ -113,6 +118,9 @@
     <p class="three"><a href="h2.html" class="act"> &#8594 NCC Activities</a></p>
     <p class="three"> <a href="nccoutcomes.html" class="act">&#8594 NCC Outcomes</a></p>
   </ol>
+</div>
+<div class="enroll">
+  <img style="width:100px;height:100px;" src="ncclogo.png">
 </div>
 </div>
 <div class="gallery">
@@ -209,6 +217,13 @@
 
 
 
-
+<script>
+   function showText(index) {
+      var textOverlays = document.querySelectorAll('.text-overlay');
+      textOverlays.forEach(function(overlay, i) {
+        overlay.classList.toggle('active', i + 1 === index);
+      });
+    }
+</script>
 
    </body>   

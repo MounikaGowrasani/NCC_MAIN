@@ -249,13 +249,19 @@
     display:flex;
     height: 60px;
     
-    margin-top: -70px;
+   
 }
 .Overview{
     display: flex;
-    
+    justify-content: space-between;
     
 }
+.enroll {
+    width: 10%;
+    text-align: center;
+    padding-top: 120px;
+  
+  }
 .objective{
         width: 800px; /* Fixed width for the container */
         height: 350px; /* Fixed height for the container */
@@ -269,29 +275,29 @@
       font-size: 2em;
       margin-bottom: 1em;
       display: inline-block; /* Ensure the background covers the entire width */
-      padding: 1em 2em;
+   
         background-color:white;
         color: black;
         font-size: 20px;
-        padding: 10px;
+       
         border-radius: 10px;
         
         
  }
  .three1{
-    background-color:rgb(21, 186, 51) ;
-    color: white;
+    background-color:white;
+    color: black;
     width: 400px;
-    margin-right: 0px;
-    padding-left: 70px;
+   
     padding-top: 50px;
     
  }
  .info{
     margin-top: 50px;
  }
- .three{
-    padding-left: 60px;
+ .three a{
+    color: black;
+   
  }
 .span1{
     font-family: "Times New Roman", Times, serif;
@@ -496,47 +502,59 @@ body,html{
     padding: 0;
     
 }
-.container {
+.video-container {
     position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
+    width: 100%;
+    height: 90vh;
+overflow: hidden;
   }
 
   .vvideo {
     width: 100%;
-    height: 90%;
+    height: 100%;
     object-fit: cover;
-    opacity: 0.9; 
   }
 
-  .overlay {
+  .overlay-bar {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    cursor: pointer;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    
-    color: white; /* Adjust text color to your preference */
+    z-index: 2; /* Bars on top of the video */
+    transition: background-color 0.3s;
   }
 
-  .overlay label {
-    margin-top: 25px;
-    font-size: 35px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-  font-size: 2em;
-  margin-bottom: 1em;
-  display: inline-block; /* Ensure the background covers the entire width */
-  padding: 1em 2em; /* Adjust padding to create space around the text */
-  background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for transparency */
-  color: white; 
-  border-radius: 10px;
-   
+  .overlay-bar:hover {
+    background-color: #3498db; /* Change background color on hover */
+  }
+
+  .bar-1 { top: 20px; left: 20px; }
+  .bar-2 { top: 20px; left: 60px; }
+  .bar-3 { top: 60px; left: 20px; }
+  .bar-4 { top: 60px; left: 60px; }
+
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1; /* Text overlays below the bars */
+  }
+
+  .text-overlay.active {
+    display: block;
+  }
+  #text1{
+    background-color: black;
+    padding:1em 2em;
+    color: white;
+    border-radius: 15px;
+    opacity: 0.4;
+
   }
   
