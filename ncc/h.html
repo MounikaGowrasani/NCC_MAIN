@@ -55,15 +55,30 @@
     <video  autoplay loop muted playsinline class="vvideo" >
       <source src="videoplayback.mp4" type="video/mp4">
      </video>   
-     <div class="text-overlay active" id="text1">Text 1</div>
-     <div class="text-overlay" id="text2">Text 2</div>
-     <div class="text-overlay" id="text3">Text 3</div>
-     <div class="text-overlay" id="text4">Text 4</div>
-
-     <div class="overlay-bar bar-1" onclick="showText(1)">1</div>
-     <div class="overlay-bar bar-2" onclick="showText(2)">2</div>
-     <div class="overlay-bar bar-3" onclick="showText(3)">3</div>
-     <div class="overlay-bar bar-4" onclick="showText(4)">4</div>
+     <div class="text-overlay active" id="text1"><b><center><h1>National Cadet Corps</h1></center></b><center><p style="font-size: 23px;">The NCC aims at developing Character, Comradeship, Discipline, a Secular outlook, the spirit of adventure and ideals of selfless service amongst the youth at the country.</p> </center></div>
+     <div class="text-overlay" id="text2"><h1 style="display: inline;">Join the NCC, Shape Your Destiny</h1><br><center><p>Online Enrollement Registration</p></center><center><button onclick="redirectToOtherPage()">Enroll &#11177;</button></center></div>
+     <div class="text-overlay" id="text3"><h1 style="display: inline;">Your NCC Portal: A Gateway to Growth</h1><br><center><p>Login to NCC Now</p></center><center><button onclick="login()">Login &#11177 </button></center></div>
+     <div class="text-overlay" id="text4"> <h1>A Glimpse into NCC Enrollment Growth</h1><center><br><table id="dataTable" style="width: 400px;height: 150px;">
+      <tr style="font-size:20px ; font-weight: bold;">
+          
+          <th class="year-header">2019</th>
+          <th class="year-header">2020</th>
+          <th class="year-header">2021</th>
+          <th class="year-header">2022</th>
+      </tr>
+      <tr style="font-size:50px;">
+          
+          <td class="data-cell" id="cell2019"></td>
+          <td class="data-cell" id="cell2020"></td>
+          <td class="data-cell" id="cell2021"></td>
+          <td class="data-cell" id="cell2022"></td>
+      </tr></table></center></div>
+<div class="lines">
+     <div class="overlay-bar bar-1" onclick="showText(1)"></div>
+  <div class="overlay-bar bar-2" onclick="showText(2)"></div>
+  <div class="overlay-bar bar-3" onclick="showText(3)"></div>
+  <div class="overlay-bar bar-4" onclick="showText(4)"></div>
+</div>
 </div>
 </div>
   <h1 style="margin-left:350px; margin-top: 30px;"><u><b style="font-family: Times New Roman, Times, serif;color:black;">NCC Overview</b></u></h1>
@@ -112,16 +127,25 @@
 
 
 <div class="three1">
-  <p class="info"><h3>NCC Information</h3></p>
+  <p class="info"><h2>NCC Information</h2></p>
 
-    <p class="three"> <a href="#" class="act">&#8594  NCC Home</a></p>
-    <p class="three"><a href="h2.html" class="act"> &#8594 NCC Activities</a></p>
-    <p class="three"> <a href="nccoutcomes.html" class="act">&#8594 NCC Outcomes</a></p>
+    <p class="three"> <a href="h.html" class="act">&rarr;&nbsp;  NCC Home</a></p>
+    <p class="three"><a href="h2.html" class="act"> &#8594&nbsp;  NCC Activities</a></p>
+    <p class="three"> <a href="nccoutcomes.html" class="act">&#8594&nbsp;  NCC Outcomes</a></p>
   </ol>
 </div>
-<div class="enroll">
-  <img style="width:100px;height:100px;" src="ncclogo.png">
+<div class="enroll"  onmouseover="changeColor(this)" onmouseout="resetColor(this)" onclick="redirectToOtherPage()">
+<span >
+  <img style="  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;" src="ncclogo-removebg-preview.png" alt="NCC Logo">
+ </span><br><br><br><br><br><br><br>
+ <h4>NCC ENROLLMENT</h4>
 </div>
+
 </div>
 <div class="gallery">
   <h1><u>Gallery</u></h1>
@@ -218,12 +242,108 @@
 
 
 <script>
-   function showText(index) {
-      var textOverlays = document.querySelectorAll('.text-overlay');
-      textOverlays.forEach(function(overlay, i) {
-        overlay.classList.toggle('active', i + 1 === index);
-      });
+  let currentTextIndex = 1;
+  let direction = 1; // 1 for forward, -1 for backward
+  const totalTexts = 4;
+  const intervalDuration = 3000; // Change this value to adjust the interval duration
+
+  function showText(index) {
+    // Hide all text overlays
+    const textOverlays = document.querySelectorAll('.text-overlay');
+    textOverlays.forEach((overlay) => {
+      overlay.classList.remove('active');
+    });
+
+    // Show the selected text overlay
+    const selectedText = document.getElementById(`text${index}`);
+    selectedText.classList.add('active');
+
+    // Reset all bars
+    const overlayBars = document.querySelectorAll('.overlay-bar');
+    overlayBars.forEach((bar) => {
+      bar.classList.remove('active');
+    });
+
+    // Expand and color the selected bar
+    const selectedBar = document.querySelector(`.bar-${index}`);
+    selectedBar.classList.add('active');
+  }
+
+  function updateTextVisibility() {
+    showText(currentTextIndex);
+
+    setTimeout(() => {
+      currentTextIndex += direction;
+
+      if (currentTextIndex > totalTexts) {
+        currentTextIndex = 1;
+      } else if (currentTextIndex < 1) {
+        currentTextIndex = totalTexts;
+      }
+
+      updateTextVisibility();
+    }, intervalDuration);
+  }
+
+  // Initial call to start the slideshow
+  updateTextVisibility();
+    function changeColor(element) {
+        element.style.backgroundColor = 'rgb(185, 206, 255)';/* your desired color on hover */;
+        element.style.boxShadow = '0 0 7px rgb(235, 55, 55)';
+        element.style.cursor = 'pointer'; 
     }
+
+    function resetColor(element) {
+        element.style.backgroundColor = 'rgb(221, 230, 230)';
+        element.style.boxShadow = '0 0 10px rgb(218, 215, 215)'; // Reset to the original color
+        element.style.cursor = 'auto'; 
+    }
+    function redirectToOtherPage() {
+        // Replace 'otherpage.html' with the actual URL of the page you want to navigate to
+        window.location.href = '/NCC_MAIN/NCC_ENROLL/enroll.html';
+    }
+    function login() {
+        // Replace 'otherpage.html' with the actual URL of the page you want to navigate to
+        window.location.href = '/NCC_MAIN/NCC_LOGIN/loginmain.php';
+    }
+   
+    function numberCounter(targetCell, maxValue) {
+        var current = 0;
+        var increment = 1;
+        var speed = 2; // Adjust the speed of the counter
+
+        var observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var intervalId = setInterval(function() {
+                        if (current <= maxValue) {
+                            targetCell.textContent = current;
+                            targetCell.style.fontWeight = 'bold';
+                            current += increment;
+                        } else {
+                            clearInterval(intervalId);
+                        }
+                    }, speed);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(targetCell);
+    }
+
+    // Set the maximum values for each year
+
+    var maxValue2019 = 300;
+    var maxValue2020 = 400;
+    var maxValue2021 = 550;
+    var maxValue2022 = 676;
+
+    // Start the number counters when they come into view
+    numberCounter(document.getElementById("cell2019"), maxValue2019);
+    numberCounter(document.getElementById("cell2020"), maxValue2020);
+    numberCounter(document.getElementById("cell2021"), maxValue2021);
+    numberCounter(document.getElementById("cell2022"), maxValue2022);
 </script>
 
    </body>   
