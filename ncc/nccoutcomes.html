@@ -2,47 +2,67 @@
 <html lang="en">
   <head>
     <style>
-		table {
-  border-collapse: collapse;
-  width: 100%;
-  
+		#table-container {
+  position: relative;
+  /* Set initial position of the table */
+  left: -100%; /* Offscreen to the left */
+  transition: left 0.5s ease-in-out;
 }
+#table-container2
+{
+  position: relative;
+  /* Set initial position of the table */
+  right: -100%; /* Offscreen to the left */
+  transition: right 0.5s ease-in-out;
+}
+    table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto; /* for centering */
+}
+
 th, td {
   border: 1px solid #000000;
   text-align: center;
-  color: white;
   padding: 8px;
-  height: 3px;
+  height: 30px; /* adjusted for better presentation */
 }
-tr:hover{
+
+tr:hover {
   background-color: #352cbd;
   transform: scale(1.02);
- 
+  box-shadow: 0 0 4px 4px rgba(26, 9, 99, 0.3); /* added shadow effect */
+  transition: box-shadow 0.4s ease-in-out;
+  color: white; /* added for visibility on hover */
 }
-th{
-    background-color: rgb(219, 121, 9);
-    
+
+th {
+  background-color: #1640da;
+  
 }
+
 tr:nth-child(even) {
-  background-color: #eb9411;
+  background-color: #b8d4ff;
 }
+
 tr:nth-child(odd) {
-  background-color: rgb(255, 189, 103);
+  background-color: rgb(121, 175, 255);
 }
+
 caption {
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 10px;
 }
-td{
-    padding: 0px;
+
+td {
+  padding: 0px;
 }
+
 table, th, td {
   font-family: Arial, sans-serif;
   font-size: 15px;
   color: black;
-  height: 3px;
- 
 }
 </style>		
     <meta charset="UTF-8" />
@@ -99,48 +119,46 @@ table, th, td {
     <video  autoplay loop muted playsinline class="vvideo" >
       <source src="videoplayback.mp4" type="video/mp4">
      </video>   
-     <div class="text-overlay active" id="text1">Text 1</div>
-     <div class="text-overlay" id="text2">Text 2</div>
-     <div class="text-overlay" id="text3">Text 3</div>
-     <div class="text-overlay" id="text4">Text 4</div>
-
-     <div class="overlay-bar bar-1" onclick="showText(1)">1</div>
-     <div class="overlay-bar bar-2" onclick="showText(2)">2</div>
-     <div class="overlay-bar bar-3" onclick="showText(3)">3</div>
-     <div class="overlay-bar bar-4" onclick="showText(4)">4</div>
+     <div class="text-overlay active" id="text1"><b><center><h1 style="font-size: 40px;">National Cadet Corps</h1></center></b><center><p style="font-size: 23px;">The NCC aims at developing Character, Comradeship, Discipline, a Secular outlook, the spirit of adventure and ideals of selfless service amongst the youth at the country.</p> </center></div>
+     <div class="text-overlay" id="text2"><h1 style="display: inline;">Join the NCC, Shape Your Destiny</h1><br><center><p>Online Enrollement Registration</p></center><center><button onclick="redirectToOtherPage()">Enroll &#11177;</button></center></div>
+     <div class="text-overlay" id="text3"><h1 style="display: inline;">Your NCC Portal: A Gateway to Growth</h1><br><center><p>Login to NCC Now</p></center><center><button onclick="login()">Login &#11177 </button></center></div>
+     <div class="text-overlay" id="text4"> <h1>A Glimpse into NCC Enrollment Growth</h1><center><br><table id="dataTable" style="width: 400px;height: 150px;">
+      <tr style="font-size:20px ; font-weight: bold;">
+          
+          <th class="year-header">2019</th>
+          <th class="year-header">2020</th>
+          <th class="year-header">2021</th>
+          <th class="year-header">2022</th>
+      </tr>
+      <tr style="font-size:50px;">
+          
+          <td class="data-cell" id="cell2019"></td>
+          <td class="data-cell" id="cell2020"></td>
+          <td class="data-cell" id="cell2021"></td>
+          <td class="data-cell" id="cell2022"></td>
+      </tr></table></center></div>
+<div class="lines">
+     <div class="overlay-bar bar-1" onclick="showText(1)"></div>
+  <div class="overlay-bar bar-2" onclick="showText(2)"></div>
+  <div class="overlay-bar bar-3" onclick="showText(3)"></div>
+  <div class="overlay-bar bar-4" onclick="showText(4)"></div>
 </div>
 </div>
-  <h1 style="margin-left:350px; margin-top: 30px;"><u><b style="font-family: Times New Roman, Times, serif;color:black;">NCC Overview</b></u></h1>
+</div>
+  <h1 style="margin-left:350px; margin-top: 30px;"><u><b style="font-family: Times New Roman, Times, serif;color:black;">NCC Outcomes</b></u></h1>
 
  
  
 <div class="Overview">
  <div class="objective">
 
-  <span class="span1"><h4 style="margin-top: 0px;">OBJECTIVE:</h4></span>
+  <span class="span1"><h4 style="margin-top: 0px;">OUTCOMES:</h4></span>
     
 
     <p class="obj">
-      The objective of National Cadet Corps is to develop character, comradeship, and capacity for leadership among youth in India.
-     <br>
-     <br>
-    
-    The VFSTR NCC Company motivates the students with best training and the ideals of selfless service.
-    <br>
-    <br>
-
-    The training inculcates team spirit, a sense of nationalism and it also helps in developing the overall personality of an individual and thus enabling them to become a responsible citizen of this nation.
-    <br>
-    <br>
-
-    The ‘Aims’ of the NCC laid out in 1988 have stood the test of time and continue to meet the requirements expected of it in the current socio–economic scenario of the country.
-    <br>
-    <br>
-     The NCC aims at developing character, comradeship, discipline, a secular outlook, the spirit of adventure and ideals of selfless service amongst young citizens.
-     <br>
-     <br>
-      Further, it aims at creating a pool of organized, trained and motivated youth with leadership qualities in all walks of life, who will serve the Nation regardless of which career they choose. Needless to say, the NCC also provides an environment conducive to motivating young Indians to join the armed forces. 
-    </p>
+      The VFSTR NCC Company is proud of following officers of INDIAN ARMED FORCES who are the alumnus of VFSTR:<br>
+    &rArr; VFSTR NCC Cadet SreeTeja Bharadwaj got selected for Indian armed forces at OTA Chennai through NCC SE Scheme with 12 Lakhs Package.<br>
+        &rArr; Result Analysis of B and C Certificate participation from 2009 onwards</p>
     
 
     
@@ -176,8 +194,12 @@ table, th, td {
 </div>
 
 </div>
-<br>
-<table width="616">
+<br><center>
+  <div id="table-container">
+    <div class="gallery">
+      <h1><u>25(A) Enrollments</u></h1>
+    </div>
+<table width="616" >
   <tbody>
   <tr class="fr">
   <th rowspan="2" width="48">
@@ -522,7 +544,14 @@ table, th, td {
   </td>
   </tr>
 </table>
+</div>
 <br>
+
+
+<div class="gallery">
+  <h1><u>10(A) Enrollments</u></h1>
+</div>
+<div id="table-container2">
 <table>
   <tr>
   <th rowspan="2" width="48">
@@ -799,8 +828,8 @@ table, th, td {
   </tr>
   </tbody>
   </table>
-
-
+</div>
+</center>
 <div class="gallery">
   <h1><u>Gallery</u></h1>
 </div>
@@ -918,6 +947,35 @@ table, th, td {
         // Replace 'otherpage.html' with the actual URL of the page you want to navigate to
         window.location.href = '/NCC_MAIN/NCC_ENROLL/enroll.html';
     }
+    const table1 = document.getElementById('table-container');
+const table2 = document.getElementById('table-container2');
+const scrollThreshold = 200; // Change this value as needed
+
+let animatedTable1 = false;
+let animatedTable2 = false;
+
+window.addEventListener('scroll', () => {
+  if (!animatedTable1 && isElementInViewport(table1, scrollThreshold)) {
+    // Animate table 1 if it's in the viewport
+    table1.style.left = '0';
+    animatedTable1 = true;
+  }
+
+  if (!animatedTable2 && isElementInViewport(table2, scrollThreshold)) {
+    // Animate table 2 if it's in the viewport
+    table2.style.right = '0';
+    animatedTable2 = true;
+  }
+});
+
+// Function to check if an element is in the viewport within the scroll threshold
+function isElementInViewport(element, threshold) {
+  const bounding = element.getBoundingClientRect();
+  return (
+    bounding.top <= (window.innerHeight - threshold) &&
+    bounding.bottom >= 0
+  );
+}
 </script>
 
    </body>

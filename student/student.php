@@ -167,6 +167,7 @@
         /* Hide the dashboard by default */
         #dashboard {
             display: none;
+
         }
         
 
@@ -275,7 +276,7 @@ if (isset($_SESSION['uname'])) {
     <img src="ncclogo-removebg-preview.png" style="width=100px;height:80px;margin-left:20px;"></img><br><div  id="ncch"><b style="color:#00aeef; ">राष्ट्रीय कैडेट कोर</b><br>
 <b style="margin-left:10px; color:#ffcb06;">National Cadet Corps</b></div>
 
-       <h2 style="text-align:center;">CADET</h2>
+       <h2 style="margin-left:450px;">CADET</h2>
         <h4 style="right:100px; position:absolute; border-bottom: 2px solid #00AEEF;  border-top: 2px solid #EF1C25;cursor:pointer;padding: 5px;"><a href="\NCC_MAIN\ncc\h.html" style="color:#fff;text-decoration: none;">Home</a></h4>
         <div id="profile-button" onclick="toggleProfileDetails()"><img src="profileicon.jpeg" style="width: 30px; height: 30px;"></img></div>
         <div id="profile-details">
@@ -312,175 +313,62 @@ if (isset($_SESSION['uname'])) {
         </div>
     </div><br><br>
 
-<br><br>
-    <!-- Ranks -->
-    <center><h2>Ranks in NCC</h2><center>
-        <div class="ranks" style="display:flex;  justify-content: center;align-items: center;margin: 0;">
-        <div><img src="rank1.png"></img><br><br><p>Cadet Senior Under Officer</p></div>
-        <div><img src="rank2.png"></img><br><br><p>Cadet Under Officer</p></div>
-        <div><img src="rank3.png"></img><br><br><p>Company Quarter Master Sergeant</p></div>
-        <div><img src="rank6.png"></img><br><br><p>Sergeant</p></div>
-        <div><img src="rank4.png"></img><br><br><p>Corporal</p></div>
-        <div><img src="rank5.png"></img><br><br><p>Lance Corporal</p></div>
-</div>
-<center><h3>All others who joined in NCC are called as Cadets</h3><center>
-<br><br><br><br>
- <!-- ======= Frequently Asked Questioins Section ======= -->
- <center><h2> Frequently Asked Questions</h2></center><br><br>
-<div class="two" style="display:flex; justify-content: center;align-items: center;margin: 0;">
- <div class="wrapper" style="max-width:600px; padding:0 20px;">
-    <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
-        <input type="radio" name="tab" class="tab-radio" id="tab-1" style="display:none;">
-        <label for="tab-1" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">What is National Cadet Corps ?</span>
-            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
-        </label>
-        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">The National Cadet Corps (NCC) is a youth development movement. It has enormous potential for nation building. The NCC provides opportunities to the youth of the country for their all-round development with a sense of Duty, Commitment, Dedication, Discipline and Moral Values so that they become able leaders and useful citizens. The NCC provides exposure to the cadets in a wide range of activities., with a distinct emphasis on Social Services, Discipline and Adventure Training. The NCC is open to all regular students of schools and colleges on a voluntary basis. The students have no liability for active military service.</p>
-        </div>
-    </div>
-  </div>
-  
-  <div class="wrapper" style="max-width:600px; padding:0 20px;">
-    <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
-        <input type="radio" name="tab" class="tab-radio" id="tab-2" style="display:none;">
-        <label for="tab-2" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">When did National Cadet Corps Come into existence?</span>
-            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
-        </label>
-        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">The National Cadets Corps came into existence under the National Cadet Corps Act XXXI of 1948 (passed in April, 1948; came into existence on 16th July, 1948).</p>
-        </div>
-    </div>
-</div>
-</div>
-<div class="two" style="display:flex; justify-content: center;align-items: center;margin: 0;">
-  <div class="wrapper" style="max-width:600px; padding:0 20px;">
-  <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
-        <input type="radio" name="tab" class="tab-radio" id="tab-3" style="display:none;">
-        <label for="tab-3" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">What is/are the Aim(s) of NCC?</span>
-            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
-        </label>
-        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">To develop character, commandership, discipline , leadership, secular outlook , sprit of adventure and the ideals of selfless service amongst the youth of the country.
-To create a human resource of organized, trained and motivate youth to provide leadership in all walks of life and always available for the service of the nation .
-To provide a suitable environment to motivate the youth to take up a career in the Armed Forces.</p>
-        </div>
-    </div>
-</div>
-<div class="wrapper" style="max-width:600px; padding:0 20px;">
-  <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
-        <input type="radio" name="tab" class="tab-radio" id="tab-4" style="display:none;">
-        <label for="tab-4" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">What is the Motto of NCC?</span>
-            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
-        </label>
-        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;min-width:650px;">The motto of NCC is:“ UNITY AND DISCIPLINE”.</p>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-<div class="two" style="display:flex; justify-content: center;align-items: center;margin: 0;">
-<div class="wrapper" style="max-width:600px; padding:0 20px; ">
-    <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
-        <input type="radio" name="tab" class="tab-radio" id="tab-5" style="display:none;">
-        <label for="tab-5" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">What is the NCC symbol/insignia?</span>
-            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
-        </label>
-        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">It is the NCC Crest in gold in the middle, with the letters “NCC”; encircled by a wreath of seventeen lotus with a background in Red, Blue and Light blue.</p>
-        </div>
-    </div>
-  </div>
-  
 
-  <div class="wrapper" style="max-width:600px; padding:0 20px;">
-  <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
-        <input type="radio" name="tab" class="tab-radio" id="tab-6" style="display:none;">
-        <label for="tab-6" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">What is a NCC Group?</span>
-            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
-        </label>
-        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">The Directorates are further sub-divided into Groups, which varies according to the size of the state, each under the command of an Officer equivalent to the rank of Colonel (being upgraded to the rank of Brigadier). In all, there are 95 Group HQ’s in the country.</p>
-        </div>
-    </div>
+
+
+    <center><h1 style="font-family: 'Times New Roman';"><u>MOTTO of NCC</u></h1></center>
+
+    <div class="motto">
+    <h3 style=" text-align: center; margin-left: 150px; margin-right: 150px; font-family: 'Times New Roman'; font-weight: normal; line-height: 1.5;">
+        The need for having a motto for the Corps was discussed in the 11th Central Advisory Committee (CAC) meeting held on 11 Aug 1978. 
+        The mottos suggested were “Duty and Discipline”; “Duty, Unity and Discipline”; “Duty and Unity”; “Unity and Discipline”. 
+        The final decision for the selection of “Unity and Discipline” as the motto for the NCC was taken in the 12th CAC meeting held on 12 Oct 1980.
+    </h3>
+</div><br>
+
+<center><h1 style="font-family: 'Times New Roman';"><u>Pledge</u></h1></center>
+<div class="pledge" style="text-align: center; text-shadow: 4px 4px 8px rgba(128, 128, 128, 0.7);">
+<p>WE THE CADETS OF THE NATIONAL CADET CORPS,</p>
+<p>DO SOLOEMNLY PLEDGE THAT WE SHALL ALWAYS UPHOLD THE UNITY OF INDIA.</p>
+<p>WE RESOLVE TO BE DISCIPLINED AND RESPONSIBLE CITIZEN OF OUR NATION.</p>
+<p>WE SHALL UNDERTAKE POSITIVE COMMUNITY SERVICE IN THE SPIRIT OF SELFLESSNESS</p>
+<p>AND CONCERN FOR OUR FELLOW BEINGS.</p>
 </div>
+<br>
+
+<center><h1 style="font-family: 'Times New Roman';"><u>NCC Flag</u></h1></center>
+<center><img src="ncc_flag.jpg" style="height:20%;width:20%;"></img></center>
+<h3 style="margin-left: 150px; text-align: center;margin-right: 150px; font-family: 'Times New Roman'; font-weight: normal; line-height: 1.5;font-style: inherit;">The NCC flag for various units of the NCC was first introduced in 1951. The flag was of same pattern, colour and size as was used by various regiments of the Army. The only difference was that it had the NCC badge and unit designation placed in the centre. Later on it was felt that the flag should be in keeping with the inter-service character of the Corps. In 1954 the existing tricolour flag was introduced. The three colours in the flag depict the three services of the Corps, red for the Army, deep blue for the Navy and light blue for the Air Force. The letters NCC and the NCC crest in gold in the middle of the flag encircled by a wreath of lotus, give the flag a colourful look and a distinct identity.
+</h3>
+<br>
+
+<center><h1 style="font-family: 'Times New Roman';"><u>Associate NCC Officers</u></h1></center>
+<div class="phone" style="background-color: rgba(253, 252, 252, 0.3);
+    border: 2px black;
+    border-radius: 10px;
+    margin-left: 400px;
+    margin-top:40px;
+    margin-right:10px;">
+  <div class="ph1" style="display: flex;">
+  <div><img class ="pj" src="ANO.jpg" style="height:90%;width:70%"></img></div>
+ <div class="con" style="font-family: 'Times New Roman';">
+  <p>
+  Lt Siva Koteswararao Chinnam</p>
+<p>Captain</p>
+<p>138-B, 25(A) BN NCC, Guntur</p>
+<p>Army Wing</p>
+<p class="fas fa-envelope" style="display:inline;"></p>
+vfstrncc@gmail.com
 </div>
-<div class="two" style="display:flex; justify-content: center;align-items: center;margin: 0;">
-<div class="wrapper" style="max-width:600px; padding:0 20px;">
-  <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
-        <input type="radio" name="tab" class="tab-radio" id="tab-7" style="display:none;">
-        <label for="tab-7" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">Who is responsible for the conduct of NCC activities in an institution?
-</span>
-            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
-        </label>
-        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;">The ANO. He is in control of the cadets and is responsible to plan and organize training with the assistance of the Permanent Instructional (PI) staff, detailed by the NCC unit.</p>
-        </div>
-    </div>
-</div>
-<div class="wrapper" style="max-width:600px; padding:0 20px;">
-  <div class="parent-tab" style="margin-bottom:8px;border-radius:3px;box-shadow:0px 0px 15px rgba(0,0,0,0.18);">
-        <input type="radio" name="tab" class="tab-radio" id="tab-8" style="display:none;">
-        <label for="tab-8" style="background:#007bff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; border-radius:3px; position:relative; z-index:99;">
-            <span style="color:#fff; font-size:18px; font-weight:500; text-shadow:0 -1px 1px #0056b3;">What is a NCC Troop?
-</span>
-            <div class="icon" style="position:relative; height:30px; font-size:15px; width:30px; color:#007bff; display:block; background:#fff; border-radius:50%; text-shadow:0 -1px 1px #0056b3;" ><i class="fas fa-plus" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);"></i></div>
-        </label>
-        <div class="content" style="max-height:0px; overflow:hidden; transition: all 0.4s ease;">
-            <p style="font-size:16px; padding:15px 20px;min-width:550px;">The basic functional sub-unit in schools, having JW/JD Cadets, is a Troop.</p>
-        </div>
-    </div>
-</div>
-</div>  
 </div>
 </div>
 <br>
 <br>
 
-    <div class="footer2" style="    height: 100px;
-    background-color: rgb(206, 0, 0);
-    color: white;
-    text-align: center;
-    display: flex;
-    margin-top: 10px;
-    padding:0px;
-    margin:0px;">
-  <img  class="left" src="bulb1.png" style="margin-top :18px; 
-    height: 65px;
-    width: 65px;
-    margin-left: 150px; 
-    background-color:rgb(223, 8, 8) ;
-    background: transparent;" />
-  <h1 class="text" style="margin-top: 15px;
-    text-align: center;
-    margin-left: 130px;
-    margin-right: 20px;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    "><center>RIGHT PLACE FOR CREATIVE MINDS...<br>
-    Welcome to a place with 45-year legacy of Academic Excellence. As you explore, you begin to<br>
-    find yourself in a well diversed and intellectually intriguing atmosphere</center></h1>
-  <button class ="right" style="margin-top :30px; 
-    height: 35px;
-    width: 100px;
-    margin-left:110px;
-    color: #fff;
-    background-color:rgb(41, 41, 121);
-    border-color:rgb(41, 41, 121);
-   border-radius: 10px;"><a href="https://vignan.ac.in/"><h5 style="color:#fff; margin-top:10px;">Explore Vignan</h5></button></a>
-</div>
-    
- <!-- Footer Starts -->
- <div style="width: 100%; height: 26vh; display: flex; justify-content: center; align-items: center; background-color: #2D3092; color: #fff;">
+
   <!-- Footer Container -->
-  <div class="footer" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+  <div class="footer" style="display: flex; flex-direction: column; align-items: center; padding: 10px;background-color: #b2cfef;height: 250px;">
+    <center><img style="height: 110px;width: 120px;margin-top: -20px;" src="/NCC_MAIN/ncc/vignan logo square.png"></img></center>
     <!-- Social Links -->
     <div class="social-links mt-3" style="text-align: center;">
       <a href="#" class="facebook"   style="background-color: #1877f2; color: #fff; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; margin: 10px; transition: transform 0.2s; text-decoration:none;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
@@ -505,10 +393,10 @@ To provide a suitable environment to motivate the youth to take up a career in t
     </p>
     <!-- Additional Contact Info -->
     <div class="contact-info mt-3" style="text-align: center;">
-      <div class="email" style="color: #fff; padding: 10px; border-radius: 10px; margin: 5px;">
+      <div class="email" style="color: #fff; padding: 2px; border-radius: 10px; margin: 5px;">
         <i class="fas fa-envelope" style="font-size: 20px; "></i> Email: admissions@vignan.ac.in
       </div>
-      <div class="phone" style="color: #fff; padding: 10px; border-radius: 10px; margin: 5px;">
+      <div class="email" style="color: #fff; padding: 2px; border-radius: 10px; margin: 5px;">
         <i class="fas fa-phone" style="font-size: 20px;"></i> Phone: 7799 427 427
       </div>
     </div>
@@ -516,9 +404,15 @@ To provide a suitable environment to motivate the youth to take up a career in t
 </div>
 
 
-<div id="footer1">
-        &copy; Copyright VFSTR 2022. All Rights Reserved
+<div id="footer1" style="background-color: #2D3092;height:30px;padding-top: 10px;">
+       <center> &copy; Copyright VFSTR . All Rights Reserved</center>
     </div>
+
+
+
+ 
+
+  
     
           
     <script>
@@ -631,18 +525,7 @@ function closePasswordForm() {
     modal.style.display = "none";
 }
 
-  //JavaScript to apply styles when the input is checked
- /*var tabs = document.querySelectorAll("[id^='tab-']");
-    tabs.forEach(function(tab) {
-        tab.addEventListener("change", function () {
-            var content = tab.parentElement.querySelector(".content");
-           if (tab.checked) {
-                content.style.maxHeight = "100vh";
-            } else {
-               content.style.maxHeight = "0px";
-            }
-       });
-});*/
+
    var tabRadios = document.querySelectorAll(".tab-radio");
         var tabContents = document.querySelectorAll(".content");
        
